@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You, Shey </title>
+    <title>For You, Shey</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
 
@@ -41,21 +41,24 @@
         header p {
             font-family: 'Roboto', sans-serif;
             font-size: 20px;
-            color: #336699; /* Soft blue contrast */
+            color: #000000; /* Black text color */
             margin: 10px 0;
         }
 
-        /* Line animations */
         header::after {
-            content: "";
-            position: absolute;
             bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 4px;
-            background-color: #ff99cc;
-            animation: line-grow 1s ease forwards;
+        }
+
+        .gallery::after {
+            bottom: -30px;
+        }
+
+        .hidden-message::after {
+            bottom: -30px;
+        }
+
+        .future-plans::after {
+            bottom: -30px;
         }
 
         @keyframes line-grow {
@@ -121,6 +124,7 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             position: relative;
             border: 5px dotted #ff99cc; /* Dotted retro border */
+            overflow: hidden; /* Ensure line animations stay within section */
         }
 
         /* Retro Shapes */
@@ -210,18 +214,6 @@
             overflow: hidden; /* Ensure confetti stays within footer */
         }
 
-        /* Confetti Effect in Footer */
-        footer::before {
-            content: "🎉🎊🎁🎈🥳";
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 40px;
-            animation: confetti-fall 5s infinite;
-            opacity: 1; /* Full opacity */
-        }
-
         @keyframes confetti-fall {
             0% {
                 top: -30px;
@@ -246,20 +238,21 @@
         }
 
         .emoji-flow::before {
-            content: "🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈"; /* More emojis */
-            font-size: 60px; /* Larger emojis */
+            content: "🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈"; /* Extended emoji content for two rows */
+            font-size: 60px; /* Size of emojis */
             white-space: nowrap;
             display: block;
             position: absolute;
-            top: -100px;
+            top: -200px; /* Start position for two rows */
             left: 0;
+            width: 200%; /* Ensure it spans the width for two rows */
             opacity: 1; /* Full opacity */
             animation: emoji-flow 10s linear infinite;
         }
 
         @keyframes emoji-flow {
             0% {
-                top: -100px;
+                top: -200px;
                 opacity: 1;
             }
             100% {
@@ -267,6 +260,7 @@
                 opacity: 0;
             }
         }
+
     </style>
 </head>
 <body>
@@ -287,7 +281,7 @@
     <section class="gallery">
         <h2>Best Moments</h2>
         <p>Explore my favorite memories with you.</p>
-        <a href="#best-moments">wag ka iiyak </a>
+        <a href="#best-moments">wag ka iiyak</a>
     </section>
 
     <!-- Future Plans Section -->
@@ -301,7 +295,7 @@
     <section class="hidden-message">
         <h2>A Hidden Message</h2>
         <p>Click to reveal it! HEHE</p>
-        <a href="#hidden-message">r u sure </a>
+        <a href="#hidden-message">r u sure</a>
     </section>
     
     <footer>
