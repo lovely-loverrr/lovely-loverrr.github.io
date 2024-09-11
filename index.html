@@ -45,6 +45,18 @@
             margin: 10px 0;
         }
 
+        /* Line animations */
+        header::after, .gallery::after, .hidden-message::after, .future-plans::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 4px;
+            background-color: #ff99cc;
+            animation: line-grow 1s ease forwards;
+        }
+
         header::after {
             bottom: -20px;
         }
