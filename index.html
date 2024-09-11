@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You, [Her Name]</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
+
+        /* General Body Settings */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fce4ec; /* Light pink */
+            color: #333333; /* Dark grey for readability */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative; /* Ensure emojis flow relative to the body */
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #fff1e1; /* Light pastel yellow */
+            padding: 40px;
+            border-bottom: 8px solid #ff99cc; /* Vibrant pastel pink border */
+            border-radius: 0 0 60px 60px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        header h1 a {
+            font-family: 'Caveat', cursive; /* Handwritten playful font */
+            font-size: 50px;
+            color: #ff66b2; /* Bright pink */
+            text-decoration: none;
+            margin: 0;
+            text-shadow: 3px 3px #ff99cc; /* Vibrant pink shadow */
+        }
+
+        header p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            color: #336699; /* Soft blue contrast */
+            margin: 10px 0;
+        }
+
+        /* Line animations */
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 4px;
+            background-color: #ff99cc;
+            animation: line-grow 1s ease forwards;
+        }
+
+        @keyframes line-grow {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 60%;
+            }
+        }
+
+        /* Navigation Styling */
+        nav {
+            background-color: #f4c2c2; /* Soft pastel coral */
+            padding: 15px 0;
+            border-bottom: 5px solid #ffb3c1; /* Pastel pink border */
+            border-radius: 0 0 30px 30px;
+        }
+
+        nav a {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            color: #336699; /* Light blue */
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff66b2; /* Pink on hover */
+        }
+
+        /* Emoji Animations */
+        nav a:hover::after {
+            content: "🎉"; /* Confetti emoji */
+            position: absolute;
+            top: -10px;
+            right: -15px;
+            font-size: 25px;
+            animation: emoji-bounce 0.5s ease forwards;
+        }
+
+        @keyframes emoji-bounce {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
+        section {
+            margin: 50px auto;
+            padding: 30px;
+            max-width: 900px;
+            border-radius: 20px;
+            background-color: #fff1e1; /* Pastel yellow */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            position: relative;
+            border: 5px dotted #ff99cc; /* Dotted retro border */
+        }
+
+        /* Retro Shapes */
+        .gallery::before, .hidden-message::before, .future-plans::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            width: 80px;
+            height: 80px;
+            background-color: #ff66b2; /* Pink for decorative circles */
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .gallery::after, .hidden-message::after, .future-plans::after {
+            content: '';
+            position: absolute;
+            bottom: -25px;
+            left: -25px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff99cc; /* Light pink */
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        h2 {
+            font-family: 'Caveat', cursive; /* Playful retro font */
+            font-size: 36px;
+            color: #ff66b2; /* Bright pink */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px #f4c2c2; /* Coral shadow */
+        }
+
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            color: #333333; /* Dark grey for readability */
+            line-height: 1.8;
+        }
+
+        section a {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 20px 0;
+            background-color: #ff99cc; /* Soft pink */
+            color: #fff1e1; /* Light pastel yellow */
+            font-family: 'Caveat', cursive; /* Retro font */
+            font-size: 22px;
+            border-radius: 30px;
+            text-shadow: 1px 1px #ff66b2; /* Subtle text shadow */
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        section a:hover {
+            background-color: #ff66b2; /* Bright pink hover */
+            transform: translateY(-3px);
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15); /* Hover shadow */
+        }
+
+        /* Button animations */
+        section a::after {
+            content: "✨";
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        section a:hover::after {
+            opacity: 1;
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #fff1e1; /* Match header background color */
+            color: #ff66b2; /* Bright pink text */
+            font-family: 'Caveat', cursive;
+            border-top: 8px solid #ff99cc; /* Vibrant pastel pink border */
+            position: relative;
+            overflow: hidden; /* Ensure confetti stays within footer */
+        }
+
+        /* Confetti Effect in Footer */
+        footer::before {
+            content: "🎉🎊🎁🎈🥳";
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            animation: confetti-fall 5s infinite;
+            opacity: 1; /* Full opacity */
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                top: -30px;
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        /* Emoji Flow from Header to Footer */
+        .emoji-flow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none; /* Ensure it doesn’t interfere with other elements */
+            z-index: 10;
+        }
+
+        .emoji-flow::before {
+            content: "🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈"; /* More emojis */
+            font-size: 60px; /* Larger emojis */
+            white-space: nowrap;
+            display: block;
+            position: absolute;
+            top: -100px;
+            left: 0;
+            opacity: 1; /* Full opacity */
+            animation: emoji-flow 10s linear infinite;
+        }
+
+        @keyframes emoji-flow {
+            0% {
+                top: -100px;
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><a href="#main-content">Happy Birthday, [Her Name]!</a></h1>
+        <p>Let’s celebrate your day with style and fun!</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#gallery">Gallery</a>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2>Our Best Moments</h2>
+        <p>Explore our favorite memories, filled with laughter and joy.</p>
+        <a href="#best-moments">View the Gallery</a>
+    </section>
+
+    <!-- Hidden Message Section -->
+    <section class="hidden-message">
+        <h2>A Hidden Message</h2>
+        <p>There’s something I’ve been wanting to tell you. Click to reveal it!</p>
+        <a href="#hidden-message">Discover the Message</a>
+    </section>
+
+    <!-- Future Plans Section -->
+    <section class="future-plans">
+        <h2>Our Future Plans</h2>
+        <p>Dreaming of what’s ahead, I can’t wait for more adventures with you.</p>
+        <a href="#future-plans">Explore Future Dreams</a>
+    </section>
+
+    <footer>
+        <p>Made with love and joy by [Your Name]</p>
+    </footer>
+
+    <!-- Emoji Flow -->
+    <div class="emoji-flow"></div>
+
+</body>
+</html>
