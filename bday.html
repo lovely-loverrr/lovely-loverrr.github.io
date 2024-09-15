@@ -109,6 +109,26 @@
             position: relative;
             overflow: hidden;
         }
+     /* Back to Home Button */
+        .back-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 30px 0;
+            background-color: #ff99cc;
+            color: #fff1e1;
+            font-family: 'Caveat', cursive;
+            font-size: 22px;
+            border-radius: 30px;
+            text-shadow: 1px 1px #ff66b2;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #ff66b2;
+            transform: translateY(-3px);
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 <body>
@@ -146,10 +166,8 @@
         <a href="hidden-message.html">r u sure</a>
     </section>
 
-        <!-- back -->
-    <section id="hidden-message-section" class="hidden-message">
-        <a href="index.html">Back to Home</a>
-    </section>
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">Back to Home</a>
  
     <footer>
         <p>Made by Kobe :))</p>
