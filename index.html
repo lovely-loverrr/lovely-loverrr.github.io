@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You, Shey</title>
+    <title>SHEy's Moments</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
 
@@ -16,7 +16,6 @@
             padding: 0;
             text-align: center;
             overflow-x: hidden;
-            position: relative; /* Ensure emojis flow relative to the body */
         }
 
         /* Header Styling */
@@ -29,12 +28,10 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
         }
 
-        header h1 a {
+        header h1 {
             font-family: 'Caveat', cursive; /* Handwritten playful font */
             font-size: 50px;
             color: #ff66b2; /* Bright pink */
-            text-decoration: none;
-            margin: 0;
             text-shadow: 3px 3px #ff99cc; /* Vibrant pink shadow */
         }
 
@@ -43,87 +40,6 @@
             font-size: 20px;
             color: #000000; /* Black text color */
             margin: 10px 0;
-        }
-
-        /* Line animations */
-        header::after, .gallery::after, .hidden-message::after, .future-plans::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 4px;
-            background-color: #ff99cc;
-            animation: line-grow 1s ease forwards;
-        }
-
-        header::after {
-            bottom: -20px;
-        }
-
-        .gallery::after {
-            bottom: -30px;
-        }
-
-        .hidden-message::after {
-            bottom: -30px;
-        }
-
-        .future-plans::after {
-            bottom: -30px;
-        }
-
-        @keyframes line-grow {
-            0% {
-                width: 0;
-            }
-            100% {
-                width: 60%;
-            }
-        }
-
-        /* Navigation Styling */
-        nav {
-            background-color: #f4c2c2; /* Soft pastel coral */
-            padding: 15px 0;
-            border-bottom: 5px solid #ffb3c1; /* Pastel pink border */
-            border-radius: 0 0 30px 30px;
-        }
-
-        nav a {
-            font-family: 'Roboto', sans-serif;
-            font-size: 18px;
-            color: #336699; /* Light blue */
-            padding: 10px 20px;
-            margin: 0 10px;
-            text-decoration: none;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ff66b2; /* Pink on hover */
-        }
-
-        /* Emoji Animations */
-        nav a:hover::after {
-            content: "🎉"; /* Confetti emoji */
-            position: absolute;
-            top: -10px;
-            right: -15px;
-            font-size: 25px;
-            animation: emoji-bounce 0.5s ease forwards;
-        }
-
-        @keyframes emoji-bounce {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Section Styling */
@@ -136,34 +52,9 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             position: relative;
             border: 5px dotted #ff99cc; /* Dotted retro border */
-            overflow: hidden; /* Ensure line animations stay within section */
         }
 
-        /* Retro Shapes */
-        .gallery::before, .hidden-message::before, .future-plans::before {
-            content: '';
-            position: absolute;
-            top: -25px;
-            right: -25px;
-            width: 80px;
-            height: 80px;
-            background-color: #ff66b2; /* Pink for decorative circles */
-            border-radius: 50%;
-            z-index: -1;
-        }
-
-        .gallery::after, .hidden-message::after, .future-plans::after {
-            content: '';
-            position: absolute;
-            bottom: -25px;
-            left: -25px;
-            width: 50px;
-            height: 50px;
-            background-color: #ff99cc; /* Light pink */
-            border-radius: 50%;
-            z-index: -1;
-        }
-
+        /* Section Titles */
         h2 {
             font-family: 'Caveat', cursive; /* Playful retro font */
             font-size: 36px;
@@ -172,6 +63,7 @@
             text-shadow: 2px 2px #f4c2c2; /* Coral shadow */
         }
 
+        /* Text Styling */
         p {
             font-family: 'Roboto', sans-serif;
             font-size: 18px;
@@ -200,20 +92,6 @@
             box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15); /* Hover shadow */
         }
 
-        /* Button animations */
-        section a::after {
-            content: "✨";
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        section a:hover::after {
-            opacity: 1;
-        }
-
         /* Footer Styling */
         footer {
             margin-top: 50px;
@@ -223,99 +101,33 @@
             font-family: 'Caveat', cursive;
             border-top: 8px solid #ff99cc; /* Vibrant pastel pink border */
             position: relative;
-            overflow: hidden; /* Ensure confetti stays within footer */
         }
-
-        @keyframes confetti-fall {
-            0% {
-                top: -30px;
-                opacity: 1;
-            }
-            100% {
-                top: 100%;
-                opacity: 0;
-            }
-        }
-
-        /* Emoji Flow from Header to Footer */
-        .emoji-flow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none; /* Ensure it doesn’t interfere with other elements */
-            z-index: 10;
-        }
-
-        .emoji-flow::before {
-            content: "🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈🥳🤩🎂🎉🎊🎁🎈"; /* Extended emoji content for two rows */
-            font-size: 60px; /* Size of emojis */
-            white-space: nowrap;
-            display: block;
-            position: absolute;
-            top: -200px; /* Start position for two rows */
-            left: 0;
-            width: 200%; /* Ensure it spans the width for two rows */
-            opacity: 1; /* Full opacity */
-            animation: emoji-flow 10s linear infinite;
-        }
-
-        @keyframes emoji-flow {
-            0% {
-                top: -200px;
-                opacity: 1;
-            }
-            100% {
-                top: 100%;
-                opacity: 0;
-            }
-        }
-
     </style>
 </head>
 <body>
 
     <header>
-        <h1><a href="#main-content">Happy Birthday, Shey!</a></h1>
-        <p>Enjoy your day kahit mas matanda ako pero di ka nagkukuya sakin, joke lang. Wala ako masyado masabi kasi di pa kita ganun kakilala hopelly sa sabado I get to know you more. Ayun lang muna, wish you the best!!</p>
+        <h1>SHEy's Special Moments</h1>
+        <p>A collection of our favorite memories together. 💖</p>
     </header>
 
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-    </nav>
-
-    <!-- Gallery Section -->
-    <section class="gallery">
-        <h2>Best Moments</h2>
-        <p>Explore my favorite memories with you.</p>
-        <a href="best-moments.html">wag ka iiyak</a>
+    <!-- Birthday Section -->
+    <section>
+        <h2>Happy Birthday, Shey!</h2>
+        <p>This day is all about you! Wishing you joy, laughter, and every happiness on your special day. From heartfelt messages to the fun times ahead, may your birthday be as wonderful as you are. 🎂✨</p>
+        <a href="bday.html">See Birthday Moments</a>
     </section>
 
-    <!-- Future Plans Section -->
-    <section class="future-plans">
-        <h2>Future Plans??</h2>
-        <p>I can’t wait to get to know you more.</p>
-        <a href="future-plans.html">G ka ba?</a>
+    <!-- First Meet-up Section -->
+    <section>
+        <h2>Our First Meet-up</h2>
+        <p>Our first meet-up is a memory I hold close. It was the start of everything amazing between us. From that moment, I knew there was something special about you. Here's to reliving that perfect day! 🥰</p>
+        <a href="#">Relive the Day</a>
     </section>
-    
-    <!-- Hidden Message Section -->
-    <section class="hidden-message">
-        <h2>A Hidden Message</h2>
-        <p>Click to reveal it! HEHE</p>
-        <a href="hidden-message.html">r u sure</a>
-    </section>
-    
+
     <footer>
-        <p>Made by Kobe :))</p>
-        <p>ps: i made it short para curious ka pa para sa sat bleh</p>
+        <p>Made with love for Shey 💖</p>
     </footer>
-
-    <!-- Emoji Flow -->
-    <div class="emoji-flow"></div>
 
 </body>
 </html>
