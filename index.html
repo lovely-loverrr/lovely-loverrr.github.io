@@ -61,16 +61,27 @@
             margin: 10px 0;
         }
 
+        /* Grid Container for Sections */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px; /* Space between columns */
+            padding: 20px;
+        }
+
         /* Section Styling */
-        section {
-            margin: 50px auto;
-            padding: 30px;
-            max-width: 900px;
+        .section {
+            padding: 20px;
             border-radius: 20px;
             background-color: #fff1e1; /* Pastel yellow */
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            position: relative;
             border: 5px dotted #ff99cc; /* Dotted retro border */
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Elevated shadow */
         }
 
         /* Section Titles */
@@ -79,6 +90,15 @@
             font-size: 36px;
             color: #ff66b2; /* Bright pink */
             margin-bottom: 20px;
+            text-shadow: 2px 2px #f4c2c2; /* Coral shadow */
+        }
+
+        /* Subsection Titles */
+        h3 {
+            font-family: 'Caveat', cursive; /* Playful retro font */
+            font-size: 28px;
+            color: #ff66b2; /* Bright pink */
+            margin-bottom: 10px;
             text-shadow: 2px 2px #f4c2c2; /* Coral shadow */
         }
 
@@ -136,20 +156,37 @@
         <a href="me.html">Author</a>
     </nav>
 
-    
-    <!-- Birthday Section -->
-    <section>
-        <h2>Happy Birthday, Shey!</h2>
-        <p>This day is all about you! Wishing you joy, laughter, and every happiness on your special day. From heartfelt messages to the fun times ahead, may your birthday be as wonderful as you are. 🎂✨</p>
-        <a href="bday.html">See Birthday Moments</a>
-    </section>
+    <!-- Grid Container for Sections -->
+    <div class="container">
 
-    <!-- First Meet-up Section -->
-    <section>
-        <h2>Our First Meet-up</h2>
-        <p>Our first meet-up is a memory I hold close. It was the start of everything amazing between us. From that moment, I knew there was something special about you. Here's to reliving that perfect day! 🥰</p>
-        <a href="1st-meet.html">Relive the Day</a>
-    </section>
+        <!-- Section 1: Face to Face (F2F) -->
+        <section class="section">
+            <h2>Face to Face (F2F)</h2>
+            <h3><a href="bday.html">Happy Birthday, Shey!</a></h3>
+            <p>This day is all about you! Wishing you joy, laughter, and every happiness on your special day. 🎂✨</p>
+            <h3><a href="1st-meet.html">Our First Meet-up</a></h3>
+            <p>Our first meet-up is a memory I hold close. Here's to reliving that perfect day! 🥰</p>
+        </section>
+
+        <!-- Section 2: Messages -->
+        <section class="section">
+            <h2>Messages</h2>
+            <h3><a href="note1.html">Note 1</a></h3>
+            <p>From the very first time we talked, I knew you were special. Here's to more memories together. 💕</p>
+            <h3><a href="note2.html">Note 2</a></h3>
+            <p>I cherish every moment we share, and I can't wait for what the future holds for us. 💫</p>
+        </section>
+
+        <!-- Section 3: Gallery -->
+        <section class="section">
+            <h2>Gallery</h2>
+            <h3><a href="pictures.html">Pictures</a></h3>
+            <p>A collection of our favorite snapshots.</p>
+            <h3><a href="videos.html">Videos</a></h3>
+            <p>Relive the moments through our videos.</p>
+        </section>
+
+    </div>
 
     <footer>
         <p>Made with love for Shey 💖</p>
