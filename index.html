@@ -17,12 +17,14 @@
             text-align: center;
             overflow-x: hidden;
         }
+
         nav {
             background-color: #f4c2c2;
             padding: 15px 0;
             border-bottom: 5px solid #ffb3c1;
             border-radius: 0 0 30px 30px;
         }
+
         nav a {
             font-family: 'Roboto', sans-serif;
             font-size: 18px;
@@ -33,18 +35,32 @@
             position: relative;
             transition: color 0.3s ease;
         }
+
         nav a:hover {
             color: #ff66b2;
         }
 
-        /* Header Styling */
+        /* Enhanced Header Styling */
         header {
-            background-color: #fff1e1; /* Light pastel yellow */
-            padding: 40px;
-            border-bottom: 8px solid #ff99cc; /* Vibrant pastel pink border */
+            background: linear-gradient(135deg, #ffccf9, #fff1e1); /* Gradient effect */
+            padding: 60px;
+            border-bottom: 8px solid #ff99cc;
             border-radius: 0 0 60px 60px;
             position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+            opacity: 0.3;
+            z-index: 0;
         }
 
         header h1 {
@@ -52,6 +68,18 @@
             font-size: 50px;
             color: #ff66b2; /* Bright pink */
             text-shadow: 3px 3px #ff99cc; /* Vibrant pink shadow */
+            animation: float 3s ease-in-out infinite; /* Floating animation */
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         header p {
@@ -59,6 +87,8 @@
             font-size: 20px;
             color: #000000; /* Black text color */
             margin: 10px 0;
+            position: relative;
+            z-index: 1;
         }
 
         /* Grid Container for Sections */
@@ -73,10 +103,23 @@
         .section {
             padding: 20px;
             border-radius: 20px;
-            background-color: #fff1e1; /* Pastel yellow */
+            background: linear-gradient(135deg, #fff1e1, #ffccf9); /* Gradient effect */
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             border: 5px dotted #ff99cc; /* Dotted retro border */
             transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+            opacity: 0.3;
+            z-index: 0;
         }
 
         .section:hover {
@@ -131,40 +174,59 @@
             box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15); /* Hover shadow */
         }
 
-        /* Footer Styling */
+        /* Enhanced Footer Styling */
         footer {
             margin-top: 50px;
             padding: 30px;
-            background-color: #fff1e1; /* Match header background color */
+            background: linear-gradient(135deg, #fff1e1, #ffccf9); /* Gradient effect */
             color: #ff66b2; /* Bright pink text */
             font-family: 'Caveat', cursive;
             border-top: 8px solid #ff99cc; /* Vibrant pastel pink border */
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
             position: relative;
+            overflow: hidden;
         }
-/* Chat Button Styling */
-.chat-btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #ff99cc; /* Soft pink (matches the section buttons) */
-    color: #fff1e1; /* Light pastel yellow (matches the section buttons) */
-    font-family: 'Caveat', cursive;
-    font-size: 22px; /* Same size as section buttons */
-    border-radius: 30px;
-    text-decoration: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
 
-.chat-btn:hover {
-    background-color: #ff66b2; /* Bright pink (matches hover state of section buttons) */
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
+        footer::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+            opacity: 0.3;
+            z-index: 0;
+        }
 
+        footer p {
+            position: relative;
+            z-index: 1;
+            font-size: 22px; /* Slightly larger font size for footer text */
+        }
 
+        /* Chat Button Styling */
+        .chat-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff99cc; /* Soft pink (matches the section buttons) */
+            color: #fff1e1; /* Light pastel yellow (matches the section buttons) */
+            font-family: 'Caveat', cursive;
+            font-size: 22px; /* Same size as section buttons */
+            border-radius: 30px;
+            text-decoration: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .chat-btn:hover {
+            background-color: #ff66b2; /* Bright pink (matches hover state of section buttons) */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -215,7 +277,7 @@
         <p>Made with love for Shey 💖</p>
     </footer>
 
-<a href="https://m.me/gabrielkobe.sablan" class="chat-btn" target="_blank">Let's Chat</a>
+    <a href="https://m.me/gabrielkobe.sablan" class="chat-btn" target="_blank">Let's Chat</a>
     
 </body>
 </html>
