@@ -226,18 +226,81 @@
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
+
+        /* About Button Styling */
+        .about-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: inline-block;
+            background-color: transparent; /* No background */
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            transition: all 0.3s ease;
+        }
+
+        .about-btn img {
+            width: 40px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        .about-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Hover shadow */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr; /* Single column layout */
+            }
+
+            header {
+                padding: 30px;
+            }
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            section a {
+                font-size: 18px;
+            }
+
+            .chat-btn, .about-btn {
+                font-size: 18px;
+                padding: 10px 20px;
+            }
+        }
     </style>
 </head>
 <body>
-
+    <!-- About Link -->
+    <a href="about.html" class="about-btn">
+        <img src="icon.png" alt="About" />
+    </a>
     <header>
+        </div>
         <h1>My Special Moments with Shey</h1>
         <p>A collection of my favorite memories together. 💖</p>
     </header>
 
     <!-- Grid Container for Sections -->
     <div class="container">
-
         <!-- Section 1: Face to Face (F2F) -->
         <section class="section">
             <h2>Meetings</h2>
@@ -283,6 +346,5 @@
     </footer>
 
     <a href="https://m.me/gabrielkobe.sablan" class="chat-btn" target="_blank">Let's Chat</a>
-
 </body>
 </html>
