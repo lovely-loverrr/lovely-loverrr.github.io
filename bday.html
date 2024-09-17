@@ -1,49 +1,65 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Happy Birthday, Shey!</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
+
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #fce4ec;
+            background: linear-gradient(135deg, #fce4ec, #fff1e1, #ffccf9);
+            background-size: 300% 100%;
+            animation: wave 15s linear infinite;
             color: #333333;
             margin: 0;
             padding: 0;
             text-align: center;
             overflow-x: hidden;
-            position: relative;
         }
+
+        @keyframes wave {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
         header {
-            background-color: #fff1e1;
-            padding: 40px;
+            background: linear-gradient(135deg, #ffccf9, #fff1e1);
+            padding: 60px;
             border-bottom: 8px solid #ff99cc;
             border-radius: 0 0 60px 60px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
+
         header h1 a {
             font-family: 'Caveat', cursive;
             font-size: 50px;
             color: #ff66b2;
             text-decoration: none;
-            margin: 0;
             text-shadow: 3px 3px #ff99cc;
         }
+
         header p {
             font-family: 'Roboto', sans-serif;
             font-size: 20px;
             color: #000000;
             margin: 10px 0;
         }
+
         nav {
-            background-color: #f4c2c2;
+            background: linear-gradient(135deg, #ffccf9, #fff1e1);
             padding: 15px 0;
-            border-bottom: 5px solid #ffb3c1;
+            border-bottom: 5px solid #ff99cc;
             border-radius: 0 0 30px 30px;
         }
+
         nav a {
             font-family: 'Roboto', sans-serif;
             font-size: 18px;
@@ -51,22 +67,24 @@
             padding: 10px 20px;
             margin: 0 10px;
             text-decoration: none;
-            position: relative;
             transition: color 0.3s ease;
         }
+
         nav a:hover {
             color: #ff66b2;
         }
+
         section {
             margin: 50px auto;
             padding: 30px;
             max-width: 900px;
             border-radius: 20px;
-            background-color: #fff1e1;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            border: 5px dotted #ff99cc;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             position: relative;
-            border: 5px dotted #ff99cc;
         }
+
         h2 {
             font-family: 'Caveat', cursive;
             font-size: 36px;
@@ -74,12 +92,14 @@
             margin-bottom: 20px;
             text-shadow: 2px 2px #f4c2c2;
         }
+
         p {
             font-family: 'Roboto', sans-serif;
             font-size: 18px;
             color: #333333;
             line-height: 1.8;
         }
+
         section a {
             display: inline-block;
             padding: 15px 30px;
@@ -91,25 +111,25 @@
             border-radius: 30px;
             text-shadow: 1px 1px #ff66b2;
             text-decoration: none;
-            position: relative;
             transition: all 0.3s ease;
         }
+
         section a:hover {
             background-color: #ff66b2;
             transform: translateY(-3px);
             box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
         }
+
         footer {
             margin-top: 50px;
             padding: 30px;
-            background-color: #fff1e1;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
             color: #ff66b2;
             font-family: 'Caveat', cursive;
             border-top: 8px solid #ff99cc;
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
         }
-     /* Back to Home Button */
+
         .back-btn {
             display: inline-block;
             padding: 15px 30px;
@@ -138,21 +158,21 @@
     </header>
 
     <!-- Gallery Section -->
-    <section id="gallery-section" class="gallery">
+    <section id="gallery-section">
         <h2>Best Moments</h2>
         <p>Explore my favorite memories with you.</p>
         <a href="best-moments.html">wag ka iiyak</a>
     </section>
 
     <!-- Future Plans Section -->
-    <section id="future-plans-section" class="future-plans">
+    <section id="future-plans-section">
         <h2>Future Plans??</h2>
         <p>I can’t wait to get to know you more.</p>
         <a href="future-plans.html">G ka ba?</a>
     </section>
     
     <!-- Hidden Message Section -->
-    <section id="hidden-message-section" class="hidden-message">
+    <section id="hidden-message-section">
         <h2>A Hidden Message</h2>
         <p>Click to reveal it! HEHE</p>
         <a href="hidden-message.html">r u sure</a>
@@ -160,14 +180,10 @@
 
     <!-- Back Button -->
     <a href="index.html" class="back-btn">Back to Home</a>
- 
+
     <footer>
         <p>Made by Kobe :))</p>
         <p>ps: i made it short para curious ka pa para sa sat bleh</p>
     </footer>
-
-    <!-- Emoji Flow -->
-    <div class="emoji-flow"></div>
-
 </body>
 </html>
