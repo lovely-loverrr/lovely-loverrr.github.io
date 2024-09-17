@@ -6,48 +6,59 @@
     <title>Note 1 - Best Moments</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
+        
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #fce4ec;
+            background: linear-gradient(135deg, #fce4ec, #fff1e1, #ffccf9);
+            background-size: 300% 100%;
+            animation: wave 15s linear infinite;
             color: #333333;
             margin: 0;
             padding: 0;
             text-align: center;
-            overflow-x: hidden;
-            position: relative;
         }
+
+        @keyframes wave {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
         header {
-            background-color: #fff1e1;
-            padding: 40px;
+            background: linear-gradient(135deg, #ffccf9, #fff1e1);
+            padding: 60px;
             border-bottom: 8px solid #ff99cc;
             border-radius: 0 0 60px 60px;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        header h1 a {
+
+        header h1 {
             font-family: 'Caveat', cursive;
             font-size: 50px;
             color: #ff66b2;
-            text-decoration: none;
-            margin: 0;
             text-shadow: 3px 3px #ff99cc;
         }
+
         header p {
             font-family: 'Roboto', sans-serif;
             font-size: 20px;
             color: #000000;
             margin: 10px 0;
         }
+
         section {
             margin: 50px auto;
             padding: 30px;
             max-width: 900px;
             border-radius: 20px;
-            background-color: #fff1e1;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
             border: 5px dotted #ff99cc;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
+
         h2 {
             font-family: 'Caveat', cursive;
             font-size: 36px;
@@ -55,12 +66,14 @@
             margin-bottom: 20px;
             text-shadow: 2px 2px #f4c2c2;
         }
+
         p {
             font-family: 'Roboto', sans-serif;
             font-size: 18px;
             color: #333333;
             line-height: 1.8;
         }
+
         .back-btn {
             display: inline-block;
             padding: 15px 30px;
@@ -74,17 +87,28 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
+
         .back-btn:hover {
             background-color: #ff66b2;
             transform: translateY(-3px);
             box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            color: #ff66b2;
+            font-family: 'Caveat', cursive;
+            border-top: 8px solid #ff99cc;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1><a href="home.html">Best Moments - Note 1</a></h1>
+        <h1>Best Moments - Note 1</h1>
         <p>From the very first time we talked, I knew you were special. Here's to more memories together. 💕</p>
     </header>
 
