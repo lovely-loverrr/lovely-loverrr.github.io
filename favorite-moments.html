@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,18 +9,30 @@
         
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #fce4ec;
+            background: linear-gradient(135deg, #fce4ec, #fff1e1, #ffccf9);
+            background-size: 300% 100%;
+            animation: wave 15s linear infinite;
             color: #333333;
             margin: 0;
             padding: 0;
             text-align: center;
         }
+
+        @keyframes wave {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
         header {
-            background-color: #fff1e1;
-            padding: 40px;
+            background: linear-gradient(135deg, #ffccf9, #fff1e1);
+            padding: 60px;
             border-bottom: 8px solid #ff99cc;
             border-radius: 0 0 60px 60px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         header h1 {
@@ -42,9 +54,9 @@
             padding: 30px;
             max-width: 900px;
             border-radius: 20px;
-            background-color: #fff1e1;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
             border: 5px dotted #ff99cc;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
@@ -85,10 +97,11 @@
         footer {
             margin-top: 50px;
             padding: 30px;
-            background-color: #fff1e1;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
             color: #ff66b2;
             font-family: 'Caveat', cursive;
             border-top: 8px solid #ff99cc;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
