@@ -229,122 +229,59 @@
 
         /* About Button Styling */
         .about-btn {
-            position: absolute;
+            position: fixed;
             top: 20px;
             right: 20px;
             display: inline-block;
             background-color: transparent; /* No background */
             border: none;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
-            transition: all 0.3s ease;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
         .about-btn img {
-            width: 40px; /* Adjust size as needed */
-            height: auto;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* Circular shape */
+            transition: transform 0.3s ease;
         }
 
-        .about-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Hover shadow */
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr; /* Single column layout */
-            }
-
-            header {
-                padding: 30px;
-            }
-
-            header h1 {
-                font-size: 36px;
-            }
-
-            header p {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 28px;
-            }
-
-            header p {
-                font-size: 14px;
-            }
-
-            section a {
-                font-size: 18px;
-            }
-
-            .chat-btn, .about-btn {
-                font-size: 18px;
-                padding: 10px 20px;
-            }
+        .about-btn:hover img {
+            transform: scale(1.1); /* Slight zoom on hover */
         }
     </style>
 </head>
 <body>
-    <!-- About Link -->
-    <a href="about.html" class="about-btn">
-        <img src="icon.png" alt="About" />
-    </a>
     <header>
-        </div>
-        <h1>My Special Moments with Shey</h1>
-        <p>A collection of my favorite memories together. 💖</p>
+        <h1>Welcome to SHEY</h1>
+        <p>A Collection of Memories and Moments</p>
+        <button class="about-btn">
+            <img src="https://assets.onecompiler.app/42sfk9j2m/42sfjrdjj/icon.png" alt="About Icon">
+        </button>
     </header>
-
-    <!-- Grid Container for Sections -->
-    <div class="container">
-        <!-- Section 1: Face to Face (F2F) -->
+    
+    <main class="container">
         <section class="section">
-            <h2>Meetings</h2>
-            <div>
-                <h3><a href="bday.html">Happy Birthday, Shey!</a></h3>
-                <p>This day is all about you! Wishing you joy, laughter, and every happiness on your special day. 🎂✨</p>
-            </div>
-            <div>
-                <h3><a href="1st-meet.html">Our First Meet-up</a></h3>
-                <p>Our first meet-up is a memory I hold close. Here's to reliving that perfect day! 🥰</p>
-            </div>
+            <h2>Section 1</h2>
+            <p>Content for section 1. This could be about a specific topic or part of the story.</p>
+            <a href="#section1">Read More</a>
         </section>
-
-        <!-- Section 2: Messages -->
         <section class="section">
-            <h2>Messages</h2>
-            <div>
-                <h3><a href="note1.html">Note 1</a></h3>
-                <p>From the very first time we talked, I knew you were special. Here's to more memories together. 💕</p>
-            </div>
-            <div>
-                <h3><a href="note2.html">Note 2</a></h3>
-                <p>I cherish every moment we share, and I can't wait for what the future holds for us. 💫</p>
-            </div>
+            <h2>Section 2</h2>
+            <p>Content for section 2. This could be more details or another part of the story.</p>
+            <a href="#section2">Read More</a>
         </section>
-
-        <!-- Section 3: Gallery -->
         <section class="section">
-            <h2>Gallery</h2>
-            <div>
-                <h3><a href="pictures.html">Pictures</a></h3>
-                <p>A collection of our favorite snapshots.</p>
-            </div>
-            <div>
-                <h3><a href="videos.html">Videos</a></h3>
-                <p>Relive the moments through our videos.</p>
-            </div>
+            <h2>Section 3</h2>
+            <p>Content for section 3. This might include final thoughts or additional information.</p>
+            <a href="#section3">Read More</a>
         </section>
-    </div>
-
+    </main>
+    
     <footer>
-        <p>Made with love for Shey 💖</p>
+        <p>© 2024 SHEY. All rights reserved.</p>
+        <a href="https://chat.example.com" class="chat-btn">Chat with Us</a>
     </footer>
-
-    <a href="https://m.me/gabrielkobe.sablan" class="chat-btn" target="_blank">Let's Chat</a>
 </body>
 </html>
