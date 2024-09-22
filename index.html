@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHEY</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
+
+        /* General Body Settings */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #fff1e1, #ffccf9);
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            padding: 60px;
+            background: linear-gradient(135deg, #ffccf9, #fff1e1);
+            border-bottom: 8px solid #ff99cc;
+            border-radius: 0 0 60px 60px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 50px;
+            color: #ff66b2;
+            text-shadow: 3px 3px #ff99cc;
+        }
+
+        /* Signup Form Styling */
+        .signup-form {
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff1e1;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .signup-form:hover {
+            transform: scale(1.05);
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .signup-form input:focus {
+            border-color: #ff66b2;
+            outline: none;
+        }
+
+        .signup-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff66b2;
+            color: #fff1e1;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .signup-form button:hover {
+            background-color: #ff99cc;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            color: #ff66b2;
+            border-top: 8px solid #ff99cc;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #message {
+            color: #ff66b2;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Special Moments with Shey</h1>
+        <p>A collection of my favorite memories together. 💖</p>
+    </header>
+
+    <!-- Signup Form -->
+    <div class="signup-form">
+        <h2>Sign Up</h2>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="signup-button">Sign Up</button>
+        <p id="message"></p>
+    </div>
+
+    <footer>
+        <p>Made with love for Shey 💖</p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBgJlsfH9aHhoOGpeNX_Uj-bbDscJOSV04",
+            authDomain: "lovely-loverrr.firebaseapp.com",
+            projectId: "lovely-loverrr",
+            storageBucket: "lovely-loverrr.appspot.com",
+            messagingSenderId: "307011572610",
+            appId: "1:307011572610:web:431760afc3f791badb759b",
+            measurementId: "G-B047T63DX6"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Signup Function
+        document.getElementById('signup-button').onclick = function() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    document.getElementById('message').innerText = "Signup successful! Welcome!";
+                    // Redirect to index1.html
+                    window.location.href = "index1.html";
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    document.getElementById('message').innerText = `Error: ${errorMessage}`;
+                });
+        };
+    </script>
+</body>
+</html>
