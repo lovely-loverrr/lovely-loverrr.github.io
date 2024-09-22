@@ -7,7 +7,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
 
-        /* General Body Settings */
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #fce4ec, #fff1e1, #ffccf9);
@@ -15,43 +14,50 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        header {
-            padding: 60px;
-            background: linear-gradient(135deg, #ffccf9, #fff1e1);
-            border-bottom: 8px solid #ff99cc;
-            border-radius: 0 0 60px 60px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        header h1 {
-            font-size: 50px;
-            color: #ff66b2;
-            text-shadow: 3px 3px #ff99cc;
-        }
-
-        /* Form Styling */
-        .form-container {
-            margin: 20px auto;
+        /* Section Styling */
+        .section {
             padding: 20px;
-            background: #fff1e1;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border: 5px dotted #ff99cc;
+            transition: all 0.3s ease;
+            position: relative;
             width: 300px;
         }
 
-        .form-container input {
-            width: 100%;
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Titles */
+        h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 36px;
+            color: #ff66b2;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px #f4c2c2;
+        }
+
+        .section input {
+            width: calc(100% - 20px);
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            text-align: center; /* Center text inside input fields */
         }
 
-        .form-container button {
-            width: 100%;
-            padding: 10px;
+        .section button {
+            width: 80%; /* Smaller button width */
+            padding: 8px; /* Smaller padding */
             background-color: #ff66b2;
             color: #fff1e1;
             border: none;
@@ -60,67 +66,55 @@
             transition: background-color 0.3s;
         }
 
-        .form-container button:hover {
+        .section button:hover {
             background-color: #ff99cc;
         }
 
-        footer {
-            margin-top: 50px;
-            padding: 30px;
-            background: linear-gradient(135deg, #fff1e1, #ffccf9);
-            color: #ff66b2;
-            border-top: 8px solid #ff99cc;
-            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .login-link {
+        .toggle-link {
             margin-top: 10px;
             font-size: 14px;
-            color: #ff66b2;
-            cursor: pointer;
         }
 
-        .login-form {
-            display: none;
+        .toggle-link a {
+            color: #ff66b2;
+            text-decoration: none;
+        }
+
+        #message, #login-message {
+            color: red;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>My Special Moments with Shey</h1>
-        <p>A collection of my favorite memories together. 💖</p>
-    </header>
+    <div class="section" id="form-container">
+        <div id="signup-form">
+            <h2>Sign Up</h2>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="signup-button">Sign Up</button>
+            <p id="message"></p>
+            <div class="toggle-link">
+                <p>Already have an account? <a href="#" id="login-link">Log In</a></p>
+            </div>
+        </div>
 
-    <!-- Signup Form -->
-    <div class="form-container">
-        <h2>Sign Up</h2>
-        <input type="email" id="signup-email" placeholder="Email" required>
-        <input type="password" id="signup-password" placeholder="Password" required>
-        <button id="signup-button">Sign Up</button>
-        <p id="message"></p>
-        <span class="login-link" id="login-link" style="display:none;">Already have an account? Log in here.</span>
+        <div id="login-form" style="display: none;">
+            <h2>Log In</h2>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button id="login-button">Log In</button>
+            <p id="login-message"></p>
+            <div class="toggle-link">
+                <p>Don't have an account? <a href="#" id="signup-link">Sign Up</a></p>
+            </div>
+        </div>
     </div>
-
-    <!-- Login Form -->
-    <div class="form-container login-form" id="login-form">
-        <h2>Log In</h2>
-        <input type="email" id="login-email" placeholder="Email" required>
-        <input type="password" id="login-password" placeholder="Password" required>
-        <button id="login-button">Log In</button>
-        <p id="login-message"></p>
-        <span class="login-link" id="signup-link">Don't have an account? Sign up here.</span>
-    </div>
-
-    <footer>
-        <p>Made with love for Shey 💖</p>
-    </footer>
 
     <!-- Firebase SDK -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 
-        // Your web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyBgJlsfH9aHhoOGpeNX_Uj-bbDscJOSV04",
             authDomain: "lovely-loverrr.firebaseapp.com",
@@ -131,35 +125,28 @@
             measurementId: "G-B047T63DX6"
         };
 
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
 
         // Signup Function
         document.getElementById('signup-button').onclick = function() {
-            const email = document.getElementById('signup-email').value;
-            const password = document.getElementById('signup-password').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
-                    // Signed in
                     const user = userCredential.user;
                     document.getElementById('message').innerText = "Signup successful! Welcome!";
-                    // Redirect to index1.html
                     window.location.href = "index1.html";
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
-                    document.getElementById('message').innerText = `Error: ${errorMessage}`;
 
-                    // Check for email already in use
                     if (errorCode === 'auth/email-already-in-use') {
-                        document.getElementById('login-link').style.display = 'block';
-                        document.getElementById('login-link').onclick = function() {
-                            document.querySelector('.form-container').style.display = 'none';
-                            document.getElementById('login-form').style.display = 'block';
-                        };
+                        document.getElementById('message').innerText = `Error: ${errorMessage}. Would you like to log in instead?`;
+                    } else {
+                        document.getElementById('message').innerText = `Error: ${errorMessage}`;
                     }
                 });
         };
@@ -171,22 +158,29 @@
 
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
-                    // Signed in
                     const user = userCredential.user;
-                    document.getElementById('login-message').innerText = "Login successful! Welcome!";
-                    // Redirect to index1.html
+                    document.getElementById('login-message').innerText = "Login successful! Welcome back!";
                     window.location.href = "index1.html";
                 })
                 .catch((error) => {
-                    const loginErrorMessage = error.message;
-                    document.getElementById('login-message').innerText = `Login Error: ${loginErrorMessage}`;
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    document.getElementById('login-message').innerText = `Error: ${errorMessage}`;
                 });
-        
-            // Show signup form link
-            document.getElementById('signup-link').onclick = function() {
-                document.getElementById('login-form').style.display = 'none';
-                document.querySelector('.form-container').style.display = 'block';
-            };
+        };
+
+        // Toggle to Login Form
+        document.getElementById('login-link').onclick = function() {
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('message').innerText = '';
+        };
+
+        // Toggle to Signup Form
+        document.getElementById('signup-link').onclick = function() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+            document.getElementById('login-message').innerText = '';
         };
     </script>
 </body>
