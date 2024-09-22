@@ -15,10 +15,6 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100vh;
         }
 
         header {
@@ -35,36 +31,25 @@
             text-shadow: 3px 3px #ff99cc;
         }
 
-        /* Signup Form Styling */
-        .signup-form {
+        /* Form Styling */
+        .form-container {
             margin: 20px auto;
             padding: 20px;
             background: #fff1e1;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             width: 300px;
-            transition: transform 0.3s;
         }
 
-        .signup-form:hover {
-            transform: scale(1.05);
-        }
-
-        .signup-form input {
+        .form-container input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
-            transition: border-color 0.3s;
         }
 
-        .signup-form input:focus {
-            border-color: #ff66b2;
-            outline: none;
-        }
-
-        .signup-form button {
+        .form-container button {
             width: 100%;
             padding: 10px;
             background-color: #ff66b2;
@@ -72,12 +57,11 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background-color 0.3s;
         }
 
-        .signup-form button:hover {
+        .form-container button:hover {
             background-color: #ff99cc;
-            transform: translateY(-2px);
         }
 
         footer {
@@ -89,10 +73,15 @@
             box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        #message {
-            color: #ff66b2;
-            font-weight: bold;
+        .login-link {
             margin-top: 10px;
+            font-size: 14px;
+            color: #ff66b2;
+            cursor: pointer;
+        }
+
+        .login-form {
+            display: none;
         }
     </style>
 </head>
@@ -103,12 +92,23 @@
     </header>
 
     <!-- Signup Form -->
-    <div class="signup-form">
+    <div class="form-container">
         <h2>Sign Up</h2>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password" required>
+        <input type="email" id="signup-email" placeholder="Email" required>
+        <input type="password" id="signup-password" placeholder="Password" required>
         <button id="signup-button">Sign Up</button>
         <p id="message"></p>
+        <span class="login-link" id="login-link" style="display:none;">Already have an account? Log in here.</span>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-container login-form" id="login-form">
+        <h2>Log In</h2>
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button id="login-button">Log In</button>
+        <p id="login-message"></p>
+        <span class="login-link" id="signup-link">Don't have an account? Sign up here.</span>
     </div>
 
     <footer>
@@ -118,7 +118,7 @@
     <!-- Firebase SDK -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 
         // Your web app's Firebase configuration
         const firebaseConfig = {
@@ -137,8 +137,8 @@
 
         // Signup Function
         document.getElementById('signup-button').onclick = function() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
 
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
@@ -152,7 +152,41 @@
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     document.getElementById('message').innerText = `Error: ${errorMessage}`;
+
+                    // Check for email already in use
+                    if (errorCode === 'auth/email-already-in-use') {
+                        document.getElementById('login-link').style.display = 'block';
+                        document.getElementById('login-link').onclick = function() {
+                            document.querySelector('.form-container').style.display = 'none';
+                            document.getElementById('login-form').style.display = 'block';
+                        };
+                    }
                 });
+        };
+
+        // Login Function
+        document.getElementById('login-button').onclick = function() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    document.getElementById('login-message').innerText = "Login successful! Welcome!";
+                    // Redirect to index1.html
+                    window.location.href = "index1.html";
+                })
+                .catch((error) => {
+                    const loginErrorMessage = error.message;
+                    document.getElementById('login-message').innerText = `Login Error: ${loginErrorMessage}`;
+                });
+        
+            // Show signup form link
+            document.getElementById('signup-link').onclick = function() {
+                document.getElementById('login-form').style.display = 'none';
+                document.querySelector('.form-container').style.display = 'block';
+            };
         };
     </script>
 </body>
