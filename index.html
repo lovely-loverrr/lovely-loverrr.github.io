@@ -20,7 +20,6 @@
             justify-content: center;
         }
 
-        /* Section Styling */
         .section {
             padding: 20px;
             border-radius: 20px;
@@ -37,7 +36,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        /* Section Titles */
         h2 {
             font-family: 'Caveat', cursive;
             font-size: 36px;
@@ -52,12 +50,12 @@
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
-            text-align: center; /* Center text inside input fields */
+            text-align: center;
         }
 
         .section button {
-            width: 80%; /* Smaller button width */
-            padding: 8px; /* Smaller padding */
+            width: 80%;
+            padding: 8px;
             background-color: #ff66b2;
             color: #fff1e1;
             border: none;
@@ -89,6 +87,7 @@
     <div class="section" id="form-container">
         <div id="signup-form">
             <h2>Sign Up</h2>
+            <input type="text" id="username" placeholder="Username" required>
             <input type="email" id="email" placeholder="Email" required>
             <input type="password" id="password" placeholder="Password" required>
             <button id="signup-button">Sign Up</button>
@@ -113,6 +112,7 @@
     <!-- Firebase SDK -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+        import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 
         const firebaseConfig = {
@@ -127,46 +127,44 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const db = getFirestore(app);
 
         // Signup Function
-        document.getElementById('signup-button').onclick = function() {
+        document.getElementById('signup-button').onclick = async function() {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
+            const username = document.getElementById('username').value;
 
-            createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    const user = userCredential.user;
-                    document.getElementById('message').innerText = "Signup successful! Welcome!";
-                    window.location.href = "index1.html";
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
 
-                    if (errorCode === 'auth/email-already-in-use') {
-                        document.getElementById('message').innerText = `Error: ${errorMessage}. Would you like to log in instead?`;
-                    } else {
-                        document.getElementById('message').innerText = `Error: ${errorMessage}`;
-                    }
+                // Store user data in Firestore
+                await setDoc(doc(db, "users", user.uid), {
+                    username: username,
+                    email: email
                 });
+
+                document.getElementById('message').innerText = "Signup successful! Welcome!";
+                window.location.href = "index1.html"; // Redirect after signup
+            } catch (error) {
+                document.getElementById('message').innerText = `Error: ${error.message}`;
+            }
         };
 
         // Login Function
-        document.getElementById('login-button').onclick = function() {
+        document.getElementById('login-button').onclick = async function() {
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
 
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    const user = userCredential.user;
-                    document.getElementById('login-message').innerText = "Login successful! Welcome back!";
-                    window.location.href = "index1.html";
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    document.getElementById('login-message').innerText = `Error: ${errorMessage}`;
-                });
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                document.getElementById('login-message').innerText = "Login successful! Welcome back!";
+                window.location.href = "index1.html"; // Redirect after login
+            } catch (error) {
+                document.getElementById('login-message').innerText = `Error: ${error.message}`;
+            }
         };
 
         // Toggle to Login Form
