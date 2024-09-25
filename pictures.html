@@ -34,6 +34,16 @@
             border-bottom: 8px solid #ff99cc;
             border-radius: 0 0 60px 60px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         header h1 a {
@@ -76,6 +86,28 @@
             line-height: 1.8;
         }
 
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
         .back-btn {
             display: inline-block;
             padding: 15px 30px;
@@ -115,25 +147,25 @@
     </header>
 
     <div class="gallery">
-        <img src="pic 1.jpg">
-        <img src="pic 2.jpg">
-        <img src="pic 3.jpg">
-        <img src="pic 4.jpg">
-        <img src="pic 5.jpg">
-        <img src="pic 6.jpg">
-        <img src="pic 7.jpg">
-        <img src="pic 8.jpg">
-        <img src="pic 9.jpg">
-        <img src="pic 10.jpg">
-        <img src="pic 11.jpg">
-        <img src="pic 12.jpg">
-        <img src="pic 13.jpg">
-        <img src="pic 14.jpg">
-        <img src="pic 15.jpg">
-        <img src="pic 16.jpg">
-        <img src="pic 17.jpg">
-        <img src="pic 18.jpg">
-        <img src="pic 19.jpg">
+        <img src="pic 1.jpg" alt="Picture 1">
+        <img src="pic 2.jpg" alt="Picture 2">
+        <img src="pic 3.jpg" alt="Picture 3">
+        <img src="pic 4.jpg" alt="Picture 4">
+        <img src="pic 5.jpg" alt="Picture 5">
+        <img src="pic 6.jpg" alt="Picture 6">
+        <img src="pic 7.jpg" alt="Picture 7">
+        <img src="pic 8.jpg" alt="Picture 8">
+        <img src="pic 9.jpg" alt="Picture 9">
+        <img src="pic 10.jpg" alt="Picture 10">
+        <img src="pic 11.jpg" alt="Picture 11">
+        <img src="pic 12.jpg" alt="Picture 12">
+        <img src="pic 13.jpg" alt="Picture 13">
+        <img src="pic 14.jpg" alt="Picture 14">
+        <img src="pic 15.jpg" alt="Picture 15">
+        <img src="pic 16.jpg" alt="Picture 16">
+        <img src="pic 17.jpg" alt="Picture 17">
+        <img src="pic 18.jpg" alt="Picture 18">
+        <img src="pic 19.jpg" alt="Picture 19">
     </div>
 
     <a href="index1.html" class="back-btn">Back to Home</a>
