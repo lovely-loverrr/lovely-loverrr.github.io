@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Lane</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #fff1e1, #ffccf9);
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffccf9, #fff1e1);
+            padding: 60px;
+            border-bottom: 8px solid #ff99cc;
+            border-radius: 0 0 60px 60px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 50px;
+            color: #ff66b2;
+            text-shadow: 3px 3px #ff99cc;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 0;
+            border-left: 3px solid #ff99cc;
+        }
+
+        .event {
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 4px solid #ff66b2;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .event h3 {
+            font-family: 'Caveat', cursive;
+            font-size: 24px;
+            color: #ff66b2;
+            margin-bottom: 5px;
+        }
+
+        .event p {
+            font-size: 18px;
+            color: #333333;
+        }
+
+        .date {
+            position: absolute;
+            left: -80px;
+            top: 0;
+            background: #ffccf9;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #ff66b2;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .event:hover .date {
+            background-color: #ff99cc;
+            color: white;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            color: #ff66b2;
+            font-family: 'Caveat', cursive;
+            border-top: 8px solid #ff99cc;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            font-size: 22px;
+        }
+        .section {
+            padding: 20px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border: 5px dotted #ff99cc;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Memory Lane with Shey</h1>
+        <p>A timeline of our cherished memories. 💖</p>
+    </header>
+
+    <div class="timeline">
+        <div class="event">
+          <section class="section">
+            <div class="date">01/15/2024</div>
+            <h3>Our First Meeting</h3>
+            <p>It all started when we met at the coffee shop. A moment I’ll never forget!</p>
+          </section>
+        </div>
+        <div class="event">
+          <section class="section">
+            <div class="date">02/10/2024</div>
+            <h3>First Adventure</h3>
+            <p>Our first hike together was filled with laughter and stunning views.</p>
+          </section>
+        </div>
+        <div class="event">
+          <section class="section">
+            <div class="date">03/05/2024</div>
+            <h3>Movie Night</h3>
+            <p>We enjoyed a cozy movie night with popcorn and our favorite films!</p>
+          </section>
+        </div>
+        <div class="event">
+          <section class="section">
+            <div class="date">04/20/2024</div>
+            <h3>Special Day</h3>
+            <p>Celebrating our one-month anniversary with a lovely dinner.</p>
+          </section>
+        </div>
+        <div class="event">
+          <section class="section">
+            <div class="date">05/15/2024</div>
+            <h3>Looking Forward</h3>
+            <p>Excited for all the adventures we have yet to share!</p>
+          </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made with love for Shey 💖</p>
+    </footer>
+</body>
+</html>
