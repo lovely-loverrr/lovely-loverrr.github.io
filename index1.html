@@ -272,8 +272,28 @@
         .calendar-btn:hover img {
             transform: scale(1.1);
         }
-
     </style>
+    <script>
+        let timeout;
+
+        function resetTimer() {
+            clearTimeout(timeout);
+            timeout = setTimeout(forceSignIn, 900000); // 15 mins
+        }
+
+        function forceSignIn() {
+            alert("You have been inactive for 3 seconds. Redirecting...");
+            window.location.href = 'index.html'; // Redirect to index.html
+        }
+
+        // Set up event listeners to reset the timer
+        window.onload = function() {
+            resetTimer();
+            document.onmousemove = resetTimer;
+            document.onkeypress = resetTimer;
+            document.ontouchstart = resetTimer; // For mobile touch
+        };
+    </script>
 </head>
 <body>
     <header>
