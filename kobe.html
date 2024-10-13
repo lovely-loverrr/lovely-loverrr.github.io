@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kobe's Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #fff1e1, #ffccf9);
+            background-size: 300% 100%;
+            animation: wave 15s linear infinite;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes wave {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffccf9, #fff1e1);
+            padding: 60px;
+            border-bottom: 8px solid #ff99cc;
+            border-radius: 0 0 60px 60px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite ease-in-out;
+            text-align: center;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        header h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 50px;
+            color: #ff66b2;
+            text-shadow: 3px 3px #ff99cc;
+        }
+
+        header p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            color: #000000;
+            margin: 10px 0;
+        }
+
+        section {
+            margin: 50px auto;
+            padding: 30px;
+            max-width: 800px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            border: 5px dotted #ff99cc;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 36px;
+            color: #ff66b2;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px #f4c2c2;
+        }
+
+        p, ul {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            color: #333333;
+            line-height: 1.8;
+        }
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+
+        .section-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 30px 0;
+            background-color: #ff99cc;
+            color: #fff1e1;
+            font-family: 'Caveat', cursive;
+            font-size: 22px;
+            border-radius: 30px;
+            text-shadow: 1px 1px #ff66b2;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #ff66b2;
+            transform: translateY(-3px);
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .center-btn {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            color: #ff66b2;
+            font-family: 'Caveat', cursive;
+            border-top: 8px solid #ff99cc;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .fun-animation {
+            animation: pop 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="fun-animation">Gabriel Kobe C. Sablan</h1>
+        <p>Welcome to my dynamic portfolio! Let’s dive into my world and passions!</p>
+    </header>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Hey! I'm Kobe, a passionate Computer Engineering student at TIP Quezon City with a love for coding, gaming, and making the world a better place through tech. I’m also a K-pop fan, an aspiring cybersecurity expert, and someone who enjoys volunteering in Bible study groups. Let’s connect and create something amazing!</p>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="section-content">
+            <img src="skills-image.jpg" alt="Skills">
+            <ul>
+                <li>Programming: C++, Python</li>
+                <li>Web Development: HTML, CSS, JavaScript</li>
+                <li>Database Management: Firebase (Firestore, Realtime DB)</li>
+                <li>Robotics: Sumobot Project - 3rd Place</li>
+                <li>Project Management: Leading Bible Study and Community Activities</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <h2>Education</h2>
+        <div class="section-content">
+            <img src="education-image.jpg" alt="Education">
+            <div>
+                <p><strong>Technological Institute of the Philippines (TIP) Quezon City</strong> - Bachelor of Science in Computer Engineering</p>
+                <p>Relevant Coursework: Digital Logic Design, Microprocessors, Circuit Theory, Programming in C/C++, Data Structures, Computer Networks</p>
+                <p><strong>Infant Jesus Academy</strong> - Marikina City (2004-2018)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobbies" class="hobbies">
+        <h2>Hobbies and Interests</h2>
+        <div class="section-content">
+            <img src="hobbies-image.jpg" alt="Hobbies and Interests">
+            <ul>
+                <li>Gaming and Movies</li>
+                <li>Traveling and Basketball</li>
+                <li>K-pop and P-pop (BINI)</li>
+                <li>Volunteering in Bible Study Groups</li>
+                <li>Exploring Cybersecurity Trends</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="center-btn">
+        <a href="index1.html" class="back-btn">Back to Home</a>
+    </div>
+    
+    <footer>
+        <p>Made with 💖 by Kobe</p>
+    </footer>
+
+</body>
+</html>
