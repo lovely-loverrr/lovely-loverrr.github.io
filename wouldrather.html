@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Would I Rather?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #fff1e1, #ffccf9);
+            background-size: 300% 100%;
+            animation: wave 15s linear infinite;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffccf9, #fff1e1);
+            padding: 60px;
+            border-bottom: 8px solid #ff99cc;
+            border-radius: 0 0 60px 60px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 50px;
+            color: #ff66b2;
+            text-shadow: 3px 3px #ff99cc;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .section {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            border: 5px dotted #ff99cc;
+            position: relative;
+        }
+
+        h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 36px;
+            color: #ff66b2;
+            text-shadow: 2px 2px #f4c2c2;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .option-btn {
+            width: 48%;
+            padding: 30px;
+            color: #fff;
+            font-family: 'Caveat', cursive;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .option-btn.left {
+            background-color: #4fc3f7; /* Light Blue for the left option */
+        }
+
+        .option-btn.right {
+            background-color: #f06292; /* Pink for the right option */
+        }
+
+        .option-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .option-btn.selected {
+            border: 4px solid #333333; /* Highlight the selected option */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            border-top: 8px solid #ff99cc;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Would I Rather?</h1>
+        <p>Let's see what you'd choose!</p>
+    </header>
+
+    <div class="container">
+        <!-- Question 1 -->
+        <div class="section">
+            <div class="options">
+                <button class="option-btn left" onclick="selectOption(this)">Beach Vacation</button>
+                <button class="option-btn right" onclick="selectOption(this)">Mountain Adventure</button>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="section">
+            <div class="options">
+                <button class="option-btn left" onclick="selectOption(this)">Pizza</button>
+                <button class="option-btn right" onclick="selectOption(this)">Burgers</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made by Kobe :))</p>
+    </footer>
+
+    <script>
+        function selectOption(btn) {
+            // Remove "selected" class from other buttons in the same section
+            const siblings = btn.parentElement.children;
+            for (let i = 0; i < siblings.length; i++) {
+                siblings[i].classList.remove('selected');
+            }
+            // Add "selected" class to the clicked button
+            btn.classList.add('selected');
+        }
+    </script>
+</body>
+</html>
