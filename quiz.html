@@ -66,32 +66,35 @@
             }
         }
 
-        .container {
-            padding: 20px;
-        }
-
-        .section {
-            padding: 20px;
-            border-radius: 20px;
+        .bubble-container {
+            padding: 50px;
+            margin: 30px auto;
+            border-radius: 50px;
             background: linear-gradient(135deg, #fff1e1, #ffccf9);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             border: 5px dotted #ff99cc;
-            transition: all 0.3s ease;
+            width: 80%;
             position: relative;
-            margin: 20px;
-            width: 20%;
-            box-sizing: border-box;
         }
 
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        .container {
+            padding: 20px;
         }
 
         .quiz-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .section {
+            padding: 35px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            width: 100px;
+            transition: all 0.3s ease;
         }
 
         h2 {
@@ -126,9 +129,11 @@
             box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
         }
 
+                /* Enhanced Footer Styling */
         footer {
             margin-top: 50px;
             padding: 30px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
             border-top: 8px solid #ff99cc;
             box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
             position: relative;
@@ -157,6 +162,10 @@
             .section {
                 width: 40%;
             }
+
+            .bubble-container {
+                width: 90%;
+            }
         }
 
         @media (max-width: 480px) {
@@ -176,8 +185,13 @@
             .quiz-levels {
                 gap: 15px;
             }
+
+            .bubble-container {
+                width: 95%;
+            }
         }
-                .back-btn {
+
+        .back-btn {
             display: inline-block;
             padding: 15px 30px;
             margin: 30px 0;
@@ -204,41 +218,44 @@
         <p>idk why I made this but maybe it'll help u to know me better</p>
     </header>
 
-    <div class="container">
-            <h2>Select Your Level</h2>
-
-
-        <div class="quiz-container">
-            <div class="section">
-                <div class="quiz-level">
-                    <a href="easy.html" class="quiz-btn">Easy</a>
-                    <p>very very basic</p>
+    <div class="bubble-container">
+        <div class="container">
+            <h2>Select Your Level</h2><br><br><br>
+            
+            <div class="quiz-container">
+                <div class="section">
+                    <div class="quiz-level">
+                        <a href="easy.html" class="quiz-btn">Easy</a>
+                        <p>very very basic</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="section">
-                <div class="quiz-level">
-                    <a href="medium.html" class="quiz-btn">Medium</a>
-                    <p>somewhat personal</p>
+                <div class="section">
+                    <div class="quiz-level">
+                        <a href="medium.html" class="quiz-btn">Medium</a>
+                        <p>somewhat personal</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="section">
-                <div class="quiz-level">
-                    <a href="hard.html" class="quiz-btn">Hard</a>
-                    <p>best friends na tayo?</p>
+                <div class="section">
+                    <div class="quiz-level">
+                        <a href="hard.html" class="quiz-btn">Hard</a>
+                        <p>best friends na tayo?</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="section">
-                <div class="quiz-level">
-                    <a href="extreme.html" class="quiz-btn">Extreme</a>
-                    <p>very deep vulnerable type</p>
+                <div class="section">
+                    <div class="quiz-level">
+                        <a href="extreme.html" class="quiz-btn">Extreme</a>
+                        <p>very deep vulnerable type</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <a href="index1.html" class="back-btn">Back to Home</a>
+
     <footer>
         <p>Made by Kobe :))</p>
     </footer>
