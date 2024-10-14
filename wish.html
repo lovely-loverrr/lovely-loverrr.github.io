@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishing Well</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #fff1e1, #ffccf9);
+            background-size: 300% 100%;
+            animation: wave 15s linear infinite;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffccf9, #fff1e1);
+            padding: 60px;
+            border-bottom: 8px solid #ff99cc;
+            border-radius: 0 0 60px 60px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 50px;
+            color: #ff66b2;
+            text-shadow: 3px 3px #ff99cc;
+        }
+
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the content horizontally */
+        }
+
+        .wish-form {
+            margin: 40px auto;
+            padding: 70px;
+            max-width: 600px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            border: 5px dotted #ff99cc;
+            text-align: center; /* Center text within the form */
+        }
+
+        .wish-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ff99cc;
+            border-radius: 20px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center; /* Center the text within the input */
+        }
+
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #ff99cc;
+            color: #fff1e1;
+            font-family: 'Caveat', cursive;
+            font-size: 20px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #ff66b2;
+            transform: translateY(-3px);
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .wishes-list {
+            margin-top: 20px;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            border: 5px dotted #ff99cc; /* Dotted border for Your Wishes */
+            text-align: left; /* Align text to the left */
+        }
+
+        .wishes-list h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 36px;
+            color: #ff66b2;
+            margin-bottom: 10px;
+        }
+
+        .wish-item {
+            background: #ffccf9;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            font-size: 18px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            border-top: 8px solid #ff99cc;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            font-size: 22px;
+        }
+                .back-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 30px 0;
+            background-color: #ff99cc;
+            color: #fff1e1;
+            font-family: 'Caveat', cursive;
+            font-size: 22px;
+            border-radius: 30px;
+            text-shadow: 1px 1px #ff66b2;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #ff66b2;
+            transform: translateY(-3px);
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wishing Well</h1>
+        <p>Share your wishes with the me!</p>
+    </header>
+
+    <div class="container">
+        <div class="wish-form">
+            <input type="text" id="wishInput" class="wish-input" placeholder="Type your wish here..." />
+            <button class="submit-btn" onclick="addWish()">Submit Wish</button>
+        </div>
+
+        <div class="wishes-list" id="wishesList">
+            <h2>Your Wishes:</h2>
+            <div id="wishesContainer"></div>
+        </div>
+    </div>
+ <a href="index1.html" class="back-btn">Back to Home</a>
+    <footer>
+        <p>Made by Kobe :))</p>
+    </footer>
+
+    <script>
+        function addWish() {
+            const wishInput = document.getElementById('wishInput');
+            const wishText = wishInput.value.trim();
+            if (wishText === '') {
+                alert('Please enter a wish!');
+                return;
+            }
+
+            const wishesContainer = document.getElementById('wishesContainer');
+
+            // Create a new wish item
+            const wishItem = document.createElement('div');
+            wishItem.classList.add('wish-item');
+            wishItem.textContent = wishText;
+
+            // Append the new wish item to the container
+            wishesContainer.appendChild(wishItem);
+
+            // Clear the input
+            wishInput.value = '';
+        }
+    </script>
+  
+</body>
+</html>
