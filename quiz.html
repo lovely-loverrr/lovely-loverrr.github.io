@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kobe Quiz</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #fff1e1, #ffccf9);
+            background-size: 300% 100%;
+            animation: wave 15s linear infinite;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffccf9, #fff1e1);
+            padding: 60px;
+            border-bottom: 8px solid #ff99cc;
+            border-radius: 0 0 60px 60px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        header h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 50px;
+            color: #ff66b2;
+            text-shadow: 3px 3px #ff99cc;
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .section {
+            padding: 20px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border: 5px dotted #ff99cc;
+            transition: all 0.3s ease;
+            position: relative;
+            margin: 20px;
+            width: 20%;
+            box-sizing: border-box;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .quiz-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 36px;
+            color: #ff66b2;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px #f4c2c2;
+        }
+
+        .quiz-level {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .quiz-btn {
+            padding: 15px 30px;
+            background-color: #ff99cc;
+            color: #fff1e1;
+            font-family: 'Caveat', cursive;
+            font-size: 22px;
+            border-radius: 30px;
+            text-shadow: 1px 1px #ff66b2;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-btn:hover {
+            background-color: #ff66b2;
+            transform: translateY(-3px);
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            border-top: 8px solid #ff99cc;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        footer p {
+            position: relative;
+            z-index: 1;
+            font-size: 22px;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                width: 80%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .quiz-btn {
+                font-size: 18px;
+                padding: 10px 20px;
+            }
+
+            .quiz-levels {
+                gap: 15px;
+            }
+        }
+                .back-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 30px 0;
+            background-color: #ff99cc;
+            color: #fff1e1;
+            font-family: 'Caveat', cursive;
+            font-size: 22px;
+            border-radius: 30px;
+            text-shadow: 1px 1px #ff66b2;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #ff66b2;
+            transform: translateY(-3px);
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kobe Quiz</h1>
+        <p>idk why I made this but maybe it'll help u to know me better</p>
+    </header>
+
+    <div class="container">
+            <h2>Select Your Level</h2>
+
+
+        <div class="quiz-container">
+            <div class="section">
+                <div class="quiz-level">
+                    <a href="easy.html" class="quiz-btn">Easy</a>
+                    <p>very very basic</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-level">
+                    <a href="medium.html" class="quiz-btn">Medium</a>
+                    <p>somewhat personal</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-level">
+                    <a href="hard.html" class="quiz-btn">Hard</a>
+                    <p>best friends na tayo?</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="quiz-level">
+                    <a href="extreme.html" class="quiz-btn">Extreme</a>
+                    <p>very deep vulnerable type</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="index1.html" class="back-btn">Back to Home</a>
+    <footer>
+        <p>Made by Kobe :))</p>
+    </footer>
+</body>
+</html>
