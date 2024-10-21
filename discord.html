@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>  
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playlist and Song Covers</title>
@@ -54,11 +53,6 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
         h2 {
             font-family: 'Caveat', cursive;
             font-size: 36px;
@@ -69,17 +63,8 @@
 
         iframe {
             margin: 20px 0;
-            width: 700px; /* Spotify playlist size */
-            height: 380px;
-            border-radius: 20px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.6s ease-out;
-        }
-
-        video {
-            margin: 20px 0;
-            width: 500px; /* Smaller video size for song covers */
-            height: 300px;
+            width: 700px; /* Adjusted to fit better */
+            height: 500px; /* Height for chat widget */
             border-radius: 20px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.6s ease-out;
@@ -112,12 +97,6 @@
             border-top: 8px solid #ff99cc;
             box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
         }
-
-        /* Custom styling for the song covers section to look like a playlist */
-        .playlist-container {
-            max-width: 900px;
-            margin: 50px auto;
-        }
     </style>
 </head>
 <body>
@@ -127,15 +106,19 @@
         <p>This is my journal for creating the website for you</p>
     </header>
 
-    <!-- Spotify Playlists Section -->
+    <!-- Discord Widget Section -->
     <section>
-        <h2>Discord Link</h2>
-        <p>dont judge me please hehe</p>
-        <iframe src="https://discord.gg/rzqQENKXmK" target="_blank"></iframe>
+        <h2>Discord Chat Widget</h2>
+        <p>Join our Discord server and chat with us!</p>
+        <widgetbot
+            server="369114039869112322"
+            channel="1284825217730084874"
+            width="800"
+            height="600">
+        </widgetbot>
+      <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
     </section>
 
-
-   
     <a href="index1.html" class="back-btn">Back to Home</a>
 
     <footer>
