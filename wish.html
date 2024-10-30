@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
+     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wishing Well</title>
     <style>
+        /* Import the same fonts */
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
 
         body {
@@ -16,7 +18,15 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            overflow-x: hidden;
+        }
+
+        @keyframes wave {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
         }
 
         header {
@@ -24,9 +34,7 @@
             padding: 60px;
             border-bottom: 8px solid #ff99cc;
             border-radius: 0 0 60px 60px;
-            position: relative;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
         }
 
         header h1 {
@@ -36,92 +44,48 @@
             text-shadow: 3px 3px #ff99cc;
         }
 
-        .container {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center the content horizontally */
-        }
-
-        .wish-form {
-            margin: 40px auto;
-            padding: 70px;
-            max-width: 600px;
-            background: linear-gradient(135deg, #fff1e1, #ffccf9);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-            border: 5px dotted #ff99cc;
-            text-align: center; /* Center text within the form */
-        }
-
-        .wish-input {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #ff99cc;
-            border-radius: 20px;
-            font-size: 18px;
-            margin-bottom: 10px;
-            text-align: center; /* Center the text within the input */
-        }
-
-        .submit-btn {
-            padding: 10px 20px;
-            background-color: #ff99cc;
-            color: #fff1e1;
-            font-family: 'Caveat', cursive;
-            font-size: 20px;
-            border-radius: 20px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background-color: #ff66b2;
-            transform: translateY(-3px);
-            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .wishes-list {
-            margin-top: 20px;
-            max-width: 600px;
+        section {
+            margin: 50px auto;
             padding: 30px;
+            max-width: 900px;
             border-radius: 20px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             background: linear-gradient(135deg, #fff1e1, #ffccf9);
-            border: 5px dotted #ff99cc; /* Dotted border for Your Wishes */
-            text-align: left; /* Align text to the left */
+            border: 5px dotted #ff99cc;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .wishes-list h2 {
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
             font-family: 'Caveat', cursive;
             font-size: 36px;
             color: #ff66b2;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px #f4c2c2;
         }
 
-        .wish-item {
-            background: #ffccf9;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            font-size: 18px;
+        iframe {
+            margin: 20px 0;
+            width: 700px; /* Spotify playlist size */
+            height: 380px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.6s ease-out;
         }
 
-        footer {
-            margin-top: 50px;
-            padding: 30px;
-            background: linear-gradient(135deg, #fff1e1, #ffccf9);
-            border-top: 8px solid #ff99cc;
-            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+        video {
+            margin: 20px 0;
+            width: 500px; /* Smaller video size for song covers */
+            height: 300px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.6s ease-out;
         }
 
-        footer p {
-            font-size: 22px;
-        }
-                .back-btn {
+        .back-btn {
             display: inline-block;
             padding: 15px 30px;
             margin: 30px 0;
@@ -132,7 +96,7 @@
             border-radius: 30px;
             text-shadow: 1px 1px #ff66b2;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.6s ease-out;
         }
 
         .back-btn:hover {
@@ -140,53 +104,48 @@
             transform: translateY(-3px);
             box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
         }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #fff1e1, #ffccf9);
+            border-top: 8px solid #ff99cc;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Custom styling for the song covers section to look like a playlist */
+        .playlist-container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Wishing Well</h1>
-        <p>Share your wishes with the me!</p>
     </header>
 
-    <div class="container">
-        <div class="wish-form">
-            <input type="text" id="wishInput" class="wish-input" placeholder="Type your wish here..." />
-            <button class="submit-btn" onclick="addWish()">Submit Wish</button>
-        </div>
+    <!-- Wish Section -->
+    <section>
+        <h2>Drop any wish</h2>
+        <p>isang bagsakan lang sana limited lang responses na pwede ko makuha naka free trial lang ako hehe</p>
+        <div data-tf-live="01JBDPJ14X0N2QMFJVVJWGH8WZ"></div><script src="//embed.typeform.com/next/embed.js"></script>
+    </section>
+    
+    <!-- Responses Section -->
+    <section>
+        <h2>Responses</h2>
+        <p>Nauna na ako hehe </p>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTvJHUplMD1UBWbp8B8fM-_43asc-8PljxP8AdP3jCOIqbwUDOiSjvX1JAKtVbNxD9xLkP87m7ovKww/pubhtml?gid=38375404&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    </section>
+    
+    
+    <a href="index1.html" class="back-btn">Back to Home</a>
 
-        <div class="wishes-list" id="wishesList">
-            <h2>Your Wishes:</h2>
-            <div id="wishesContainer"></div>
-        </div>
-    </div>
- <a href="index1.html" class="back-btn">Back to Home</a>
     <footer>
         <p>Made by Kobe :))</p>
     </footer>
 
-    <script>
-        function addWish() {
-            const wishInput = document.getElementById('wishInput');
-            const wishText = wishInput.value.trim();
-            if (wishText === '') {
-                alert('Please enter a wish!');
-                return;
-            }
-
-            const wishesContainer = document.getElementById('wishesContainer');
-
-            // Create a new wish item
-            const wishItem = document.createElement('div');
-            wishItem.classList.add('wish-item');
-            wishItem.textContent = wishText;
-
-            // Append the new wish item to the container
-            wishesContainer.appendChild(wishItem);
-
-            // Clear the input
-            wishInput.value = '';
-        }
-    </script>
-  
 </body>
 </html>
