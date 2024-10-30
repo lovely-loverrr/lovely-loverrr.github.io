@@ -81,6 +81,15 @@
         #message, #login-message {
             color: red;
         }
+        .small-gif {
+        width: 100px; /* Adjust the width as needed */
+        height: auto; /* Maintain aspect ratio */
+        transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+      }
+
+      .small-gif:hover {
+        transform: translateY(-5px); /* Elevate slightly on hover */
+      }
     </style>
 </head>
 <body>
@@ -108,7 +117,9 @@
             </div>
         </div>
     </div>
-
+    
+    <img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gifs_love 2.gif" alt="Animated Pixel Art" class="small-gif"" />
+    
     <!-- Firebase SDK -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
