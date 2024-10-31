@@ -379,11 +379,20 @@
     document.addEventListener("DOMContentLoaded", function() {
         const bubbles = document.querySelectorAll('.bubble');
 
+        // Array of predefined colors
+        const colors = [
+            '#FF5733', // Color 1
+            '#33FF57', // Color 2
+            '#3357FF', // Color 3
+            '#F1C40F', // Color 4
+            '#8E44AD'  // Color 5
+        ];
+
         bubbles.forEach(bubble => {
             // Generate a random position index between 0 and 9
             const positionIndex = Math.floor(Math.random() * 10); 
 
-            // Define 10 constant positions with "mid" and "near bottom"
+            // Define 10 constant positions
             const positions = [
                 { left: '-40px', top: '-200px' },   // Position 0: Left Top
                 { left: '-40px', top: '-150px' },   // Position 1: Left Near Top
@@ -397,13 +406,18 @@
                 { right: '-40px', top: '-120px' }    // Position 9: Right Mid (Adjusted)
             ];
 
+            // Select a random color from the array
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            bubble.style.backgroundColor = randomColor; // Set the bubble's background color
+
             // Apply random position
             bubble.style.left = positions[positionIndex].left || 'auto';
             bubble.style.right = positions[positionIndex].right || 'auto';
             bubble.style.top = positions[positionIndex].top || 'auto'; // Only handle top positioning
         });
     });
-</script>
+    </script>
+
 
 </head>
 <body>
