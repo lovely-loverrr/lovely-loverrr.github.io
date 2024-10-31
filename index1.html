@@ -352,6 +352,13 @@
             top: -190px;  /* Move above the section */
             background-color: #00bcd4;
         }
+        
+        /* Position outside each section */
+        .bubble2 {
+            right: -30px; /* Adjusted to appear outside on the left */
+            top: -190px;  /* Move above the section */
+            background-color: #00bcd4;
+        }
               
     </style>
     <script>
@@ -375,7 +382,7 @@
             document.ontouchstart = resetTimer; // For mobile touch
         };
     </script>
-    <script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         const bubbles = document.querySelectorAll('.bubble');
 
@@ -388,36 +395,34 @@
             '#8E44AD'  // Color 5
         ];
 
+        // Define 10 constant positions
+        const positions = [
+            { left: '-40px', top: '-200px' },   // Position 0: Left Top
+            { left: '-40px', top: '-150px' },   // Position 1: Left Near Top
+            { left: '-40px', top: '-100px' },   // Position 2: Left Mid
+            { left: '-40px', top: '-70px' },    // Position 3: Left Near Bottom
+            { right: '-40px', top: '-200px' },  // Position 4: Right Top
+            { right: '-40px', top: '-150px' },  // Position 5: Right Near Top
+            { right: '-40px', top: '-100px' },  // Position 6: Right Mid
+            { right: '-40px', top: '-70px' },   // Position 7: Right Near Bottom
+            { left: '-40px', top: '-120px' },   // Position 8: Left Mid (Adjusted)
+            { right: '-40px', top: '-120px' }   // Position 9: Right Mid (Adjusted)
+        ];
+
+        // Iterate over each bubble element
         bubbles.forEach(bubble => {
-            // Generate a random position index between 0 and 9
-            const positionIndex = Math.floor(Math.random() * 10); 
-
-            // Define 10 constant positions
-            const positions = [
-                { left: '-40px', top: '-200px' },   // Position 0: Left Top
-                { left: '-40px', top: '-150px' },   // Position 1: Left Near Top
-                { left: '-40px', top: '-100px' },   // Position 2: Left Mid
-                { left: '-40px', top: '-70px' },    // Position 3: Left Near Bottom
-                { right: '-40px', top: '-200px' },   // Position 4: Right Top
-                { right: '-40px', top: '-150px' },   // Position 5: Right Near Top
-                { right: '-40px', top: '-100px' },    // Position 6: Right Mid
-                { right: '-40px', top: '-70px' },    // Position 7: Right Near Bottom
-                { left: '-40px', top: '-120px' },    // Position 8: Left Mid (Adjusted)
-                { right: '-40px', top: '-120px' }    // Position 9: Right Mid (Adjusted)
-            ];
-
-            // Select a random color from the array
+            // Select a random color and position index for each bubble
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            bubble.style.backgroundColor = randomColor; // Set the bubble's background color
+            const positionIndex = Math.floor(Math.random() * positions.length);
 
-            // Apply random position
+            // Set bubble's background color and position
+            bubble.style.backgroundColor = randomColor;
             bubble.style.left = positions[positionIndex].left || 'auto';
             bubble.style.right = positions[positionIndex].right || 'auto';
-            bubble.style.top = positions[positionIndex].top || 'auto'; // Only handle top positioning
+            bubble.style.top = positions[positionIndex].top || 'auto';
         });
     });
-    </script>
-
+</script>
 
 </head>
 <body>
@@ -443,7 +448,7 @@
         <!-- Section 1: Face to Face (F2F) -->
         <section class="section">
           <div class="bubble bubble1"><img src="gifs_excited.gif" alt="Animated Pixel Art" width="200px"></div>
-          <div class="bubble bubble1"><img src="gifs_kilig.gif" alt="Animated Pixel Art" width="200px"></div>
+          <div class="bubble bubble2"><img src="gifs_kilig.gif" alt="Animated Pixel Art" width="200px"></div>
             <h2>Meetings</h2>
             <div>
                 <h3><a href="bday.html">Happy Birthday, Shey!</a></h3>
