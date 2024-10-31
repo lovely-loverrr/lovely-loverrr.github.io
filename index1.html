@@ -326,43 +326,33 @@
         }
 
         .small-gif {
-        width: 100px; /* Adjust the width as needed */
-        height: auto; /* Maintain aspect ratio */
-        transition: transform 0.3s ease; /* Smooth transition for the hover effect */
-      }
-
-      .small-gif:hover {
-        transform: translateY(-5px); /* Elevate slightly on hover */
-      }
-      
+            width: 10px; /* Smaller size */
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
         .bubble {
-        transition: transform 0.3s ease; /* Smooth transition for the hover effect */
-        position: absolute;
-        padding: 10px;
-        border-radius: 20px;
-        white-space: nowrap;
-        opacity: 0;
-        transition: opacity 0.3s;
-        pointer-events: none; /* Prevent mouse events on the bubble */
-      }
-    
-      .section:hover .bubble {
-        opacity: 1; /* Show bubble on hover */
-      }
-      
-            /* Example positions for bubbles */
-      .bubble1 {
-          left: 10px;  /* Fixed position for Bubble 1 */
-          top: 10px;   /* Fixed position for Bubble 1 */
-          background-color: #00bcd4; /* Color for Bubble 1 */
-      }
-      
-      .bubble2 {
-          right: 10px; /* Fixed position for Bubble 2 */
-          bottom: 10px;   /* Fixed position for Bubble 2 */
-          background-color: #ff4081; /* Color for Bubble 2 */
-      }
-      
+            position: absolute;
+            z-index: 5; /* Positioning above sections */
+            padding: 1px; /* Smaller padding */
+            border-radius: 90px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+        
+        .section:hover .bubble {
+            opacity: 0.9;
+        }
+        
+        /* Position outside each section */
+        .bubble1 {
+            left: -30px; /* Adjusted to appear outside on the left */
+            top: -190px;  /* Move above the section */
+            background-color: #00bcd4;
+        }
+              
     </style>
     <script>
         let timeout;
@@ -385,6 +375,36 @@
             document.ontouchstart = resetTimer; // For mobile touch
         };
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const bubbles = document.querySelectorAll('.bubble');
+
+        bubbles.forEach(bubble => {
+            // Generate a random position index between 0 and 9
+            const positionIndex = Math.floor(Math.random() * 10); 
+
+            // Define 10 constant positions with "mid" and "near bottom"
+            const positions = [
+                { left: '-40px', top: '-200px' },   // Position 0: Left Top
+                { left: '-40px', top: '-150px' },   // Position 1: Left Near Top
+                { left: '-40px', top: '-100px' },   // Position 2: Left Mid
+                { left: '-40px', top: '-70px' },    // Position 3: Left Near Bottom
+                { right: '-40px', top: '-200px' },   // Position 4: Right Top
+                { right: '-40px', top: '-150px' },   // Position 5: Right Near Top
+                { right: '-40px', top: '-100px' },    // Position 6: Right Mid
+                { right: '-40px', top: '-70px' },    // Position 7: Right Near Bottom
+                { left: '-40px', top: '-120px' },    // Position 8: Left Mid (Adjusted)
+                { right: '-40px', top: '-120px' }    // Position 9: Right Mid (Adjusted)
+            ];
+
+            // Apply random position
+            bubble.style.left = positions[positionIndex].left || 'auto';
+            bubble.style.right = positions[positionIndex].right || 'auto';
+            bubble.style.top = positions[positionIndex].top || 'auto'; // Only handle top positioning
+        });
+    });
+</script>
+
 </head>
 <body>
     <header>
@@ -408,6 +428,7 @@
     <div class="container">
         <!-- Section 1: Face to Face (F2F) -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>Meetings</h2>
             <div>
                 <h3><a href="bday.html">Happy Birthday, Shey!</a></h3>
@@ -421,12 +442,11 @@
                 <h3><a href="2nd-meet.html">Our Second Meet-up</a></h3>
                 <p>Kinda sorry but it got overpowered by happiness. 💕</p>
             </div>
-            <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
-            <div class="bubble bubble2"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
         </section>
 
         <!-- Section 2: Messages -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>Messages</h2>
             <div>
                 <h3><a href="note1.html">1st Note</a></h3>
@@ -444,12 +464,11 @@
                 <h3><a href="note4.html">Thank you</a></h3>
                 <p>Appreciation Note 1</p>
             </div>
-            <div class="bubble bubble1"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
-            <div class="bubble bubble2"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
         </section>
 
         <!-- Section 3: Heartfelt Moments -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>Heartfelt Moments</h2>
             <div>
                 <h3><a href="moment1.html">The Spark</a></h3>
@@ -463,13 +482,12 @@
                 <h3><a href="moment3.html">MCDO</a></h3>
                 <p>The moment you made me feel special</p>
             </div>
-            <div class="bubble bubble1"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
-            <div class="bubble bubble2"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
         </section>
 
         
         <!-- Section 4: SoundTracks -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>SoundTracks</h2>
             <div>
                 <h3><a href="spotify.html">Spotify</a></h3>
@@ -479,12 +497,14 @@
                 <h3><a href="covers.html">Covers</a></h3>
                 <p>1st time I'm doing this</p>
             </div>
-            <div class="bubble bubble1"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
-            <div class="bubble bubble2"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
+            
+          <div class="container">
+          </div>
         </section>
 
         <!-- Section 5: ... -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>wala pa</h2>
             <div>
                 <h3><a href=".html">...</a></h3>
@@ -502,6 +522,7 @@
 
         <!-- Section 6: Gallery -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>Gallery</h2>
             <div>
                 <h3><a href="pictures.html">Pictures</a></h3>
@@ -511,45 +532,41 @@
                 <h3><a href="videos.html">Videos</a></h3>
                 <p>pwede na magvlog, stream u can be the next ishowspeed</p>
             </div>
-            <div class="bubble bubble1"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
-            <div class="bubble bubble2"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
         </section>
 
         <!-- Section 7: Hobbies & Future Plans -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>Future Plans</h2>
             <div>
                 <h3><a href="travels.html">Places to Explore Together</a></h3>
                 <p>when?: long rides with u</p>
             </div>
-            <div class="bubble bubble1"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
-            <div class="bubble bubble2"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
         </section>
 
          <!-- Section 8: Memory Lane -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>Memory Lane</h2>
             <div>
                 <h3><a href="lane.html">The Journey eme</a></h3>
                 <p>ups n downs? peace n war? basta yun</p>
             </div>
-            <div class="bubble bubble1"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
-            <div class="bubble bubble2"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
         </section>
 
         <!-- Section 9: Discord -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>Discord</h2>
             <div>
                 <h3><a href="discord.html">KOBEEEEE archives</a></h3>
                 <p>Archive chats ko sa dc regarding you hehe</p>
             </div>
-            <div class="bubble bubble1"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
-            <div class="bubble bubble2"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
         </section>
 
         <!-- Section 10: Kobe -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>Kobe Overview</h2>
             <div>
                 <h3><a href="kobe.html">Gabriel Kobe C. Sablan</a></h3>
@@ -559,12 +576,11 @@
                 <h3><a href="shey.html">Sheille Faith Velasquez</a></h3>
                 <p>I always reread our convo just so I can remember so I made this as well</p>
             </div>
-            <div class="bubble bubble1"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
-            <div class="bubble bubble2"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
         </section>
         
         <!-- Section 11: Kobe Section -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>Kobe Quizzes</h2>
             <div>
                 <h3><a href="quiz.html">How well do you know me?</a></h3>
@@ -574,12 +590,11 @@
                 <h3><a href="wouldrather.html">Would you Rather?</a></h3>
                 <p>just a normal game</p>
             </div>
-            <div class="bubble bubble1"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
-            <div class="bubble bubble2"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
         </section>
 
         <!-- Section 12: Wish Well -->
         <section class="section">
+          <div class="bubble bubble1"><img src="https://assets.onecompiler.app/42sfk9j2m/42wmwpr6w/gmorning.gif" alt="Animated Pixel Art" class="small-gif"></div>
             <h2>Kobe Powers?</h2>
             <div>
                 <h3><a href="wish.html">Wishing Well</a></h3>
@@ -589,8 +604,6 @@
                 <h3><a href="mygifts.html">My gifts to you</a></h3>
                 <p>dw its not pricey at all plus its worth it hehe</p>
             </div>
-            <div class="bubble bubble1"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
-            <div class="bubble bubble2"><img src="gifs_love.gif" alt="Animated Pixel Art" class="small-gif"></div>
         </section>
     </div>
 
