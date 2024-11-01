@@ -357,7 +357,6 @@
         .bubble2 {
             right: -30px; /* Adjusted to appear outside on the left */
             top: -190px;  /* Move above the section */
-            background-color: #00bcd4;
         }
               
     </style>
@@ -409,18 +408,8 @@
             { right: '-40px', top: '-120px' }   // Position 9: Right Mid (Adjusted)
         ];
 
-        // Iterate over each bubble element
-        bubbles.forEach(bubble => {
-            // Select a random color and position index for each bubble
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            const positionIndex = Math.floor(Math.random() * positions.length);
 
-            // Set bubble's background color and position
-            bubble.style.backgroundColor = randomColor;
-            bubble.style.left = positions[positionIndex].left || 'auto';
-            bubble.style.right = positions[positionIndex].right || 'auto';
-            bubble.style.top = positions[positionIndex].top || 'auto';
-        });
+        
     });
 </script>
 
@@ -448,7 +437,7 @@
         <!-- Section 1: Face to Face (F2F) -->
         <section class="section">
           <div class="bubble bubble1"><img src="gifs_excited.gif" alt="Animated Pixel Art" width="200px"></div>
-          <div class="bubble bubble2"><img src="gifs_kilig.gif" alt="Animated Pixel Art" width="200px"></div>
+          <div class="bubble bubble2"><img src="gifs_kilig.gif" alt="Animated Pixel Art" width="100px"></div>
             <h2>Meetings</h2>
             <div>
                 <h3><a href="bday.html">Happy Birthday, Shey!</a></h3>
@@ -467,7 +456,7 @@
         <!-- Section 2: Messages -->
         <section class="section">
           <div class="bubble bubble1"><img src="gifs_cute.gif" alt="Animated Pixel Art" width="200px"></div>
-          <div class="bubble bubble2"><img src="gifs_teasing.gif" alt="Animated Pixel Art" width="200px"></div>
+          <div class="bubble bubble2"><img src="gifs_teasing.gif" alt="Animated Pixel Art" width="150px"></div>
             <h2>Messages</h2>
             <div>
                 <h3><a href="note1.html">1st Note</a></h3>
