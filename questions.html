@@ -5,157 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dailies</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #fce4ec, #fff1e1, #ffccf9);
-            background-size: 300% 100%;
-            animation: wave 15s linear infinite;
-            color: #333333;
-            margin: 0;
-            padding: 0;
-        }
+       @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto:wght@400&display=swap');
 
-        @keyframes wave {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 100% 0;
-            }
-        }
-
-        header {
-            background: linear-gradient(135deg, #ffccf9, #fff1e1);
-            padding: 60px;
-            border-bottom: 8px solid #ff99cc;
-            border-radius: 0 0 60px 60px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            animation: bounce 2s infinite ease-in-out;
-            text-align: center;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        header h1 {
-            font-family: 'Caveat', cursive;
-            font-size: 50px;
-            color: #ff66b2;
-            text-shadow: 3px 3px #ff99cc;
-        }
-
-        header p {
-            font-family: 'Roboto', sans-serif;
-            font-size: 20px;
-            color: #000000;
-            margin: 10px 0;
-        }
-
-        section {
-            margin: 50px auto;
-            padding: 30px;
-            max-width: 800px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, #fff1e1, #ffccf9);
-            border: 5px dotted #ff99cc;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-
-        h2 {
-            font-family: 'Caveat', cursive;
-            font-size: 36px;
-            color: #ff66b2;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px #f4c2c2;
-        }
-
-        p, ul {
-            font-family: 'Roboto', sans-serif;
-            font-size: 18px;
-            color: #333333;
-            line-height: 1.8;
-        }
-
-        ul {
-            padding-left: 0;
-            list-style: none;
-        }
-
-        li {
-            margin: 10px 0;
-        }
-
-        img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-right: 20px;
-            border-radius: 10px;
-        }
-
-        .section-content {
-            display: flex;
-            align-items: center;
-        }
-
-        .back-btn {
-            display: inline-block;
-            padding: 15px 30px;
-            margin: 30px 0;
-            background-color: #ff99cc;
-            color: #fff1e1;
-            font-family: 'Caveat', cursive;
-            font-size: 22px;
-            border-radius: 30px;
-            text-shadow: 1px 1px #ff66b2;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .back-btn:hover {
-            background-color: #ff66b2;
-            transform: translateY(-3px);
-            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .center-btn {
-            display: flex;
-            justify-content: center;
-            margin: 30px 0;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 30px;
-            background: linear-gradient(135deg, #fff1e1, #ffccf9);
-            color: #ff66b2;
-            font-family: 'Caveat', cursive;
-            border-top: 8px solid #ff99cc;
-            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-
-        .fun-animation {
-            animation: pop 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes pop {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.1);
-            }
-        }
+      body {
+          font-family: 'Roboto', sans-serif;
+          background: linear-gradient(135deg, #fce4ec, #ffccf9, #fce4ec);
+          background-size: 300% 100%;
+          animation: wave 15s linear infinite;
+          color: #333333;
+          margin: 0;
+          padding: 0;
+      }
+      
+      @keyframes wave {
+          0% {
+              background-position: 0 0;
+          }
+          100% {
+              background-position: 100% 0;
+          }
+      }
+      
+      header {
+          background: linear-gradient(135deg, #ffccf9, #fff1e1);
+          padding: 60px;
+          border-bottom: 8px solid #ff99cc;
+          border-radius: 0 0 60px 60px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          text-align: center;
+      }
+      
+      header h1 {
+          font-family: 'Caveat', cursive;
+          font-size: 50px;
+          color: #ff66b2;
+          text-shadow: 3px 3px #ff99cc;
+      }
+      
+      header p {
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+          color: #000000;
+          margin: 10px 0;
+      }
+      
+      #answers-container {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          margin: 40px auto;
+          padding: 20px;
+          max-width: 1200px;
+      }
+      
+      .question-container {
+          display: flex;
+          flex-direction: column; /* Stack question and answers vertically */
+          gap: 10px;
+          padding: 20px;
+          border-radius: 20px;
+          background: linear-gradient(135deg, #fff1e1, #ffccf9);
+          border: 5px dotted #ff99cc;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .question {
+          font-size: 20px;
+          font-weight: bold;
+          color: #ff66b2;
+          margin-bottom: 10px;
+          text-align: center;
+      }
+      
+      .answer-container {
+          display: flex;
+          justify-content: space-between; /* Side by side answers */
+          gap: 20px;
+      }
+      
+      .answer-section {
+          padding: 10px;
+          border-radius: 10px;
+          background: #fff1e1;
+          border: 3px dashed #ff99cc;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+          width: 45%; /* Ensures equal width for both answers */
+          text-align: center;
+      }
+      
+      .answer-section h2 {
+          font-family: 'Caveat', cursive;
+          font-size: 24px;
+          color: #ff66b2;
+          margin-bottom: 10px;
+      }
+      
+      .answer {
+          font-size: 16px;
+          color: #333;
+      }
+      
+      footer {
+          margin-top: 50px;
+          padding: 30px;
+          background: linear-gradient(135deg, #fff1e1, #ffccf9);
+          border-top: 8px solid #ff99cc;
+          text-align: center;
+      }
+      
+      .back-btn {
+          display: inline-block;
+          padding: 15px 30px;
+          margin: 30px 0;
+          background-color: #ff99cc;
+          color: #fff1e1;
+          font-family: 'Caveat', cursive;
+          font-size: 22px;
+          border-radius: 30px;
+          text-shadow: 1px 1px #ff66b2;
+          text-decoration: none;
+          transition: all 0.3s ease;
+      }
+      
+      .back-btn:hover {
+          background-color: #ff66b2;
+          transform: translateY(-3px);
+          box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+      }
+      
+      .center-btn {
+          display: flex;
+          justify-content: center;
+          margin: 30px 0;
+      }
     </style>
 </head>
 <body>
@@ -165,50 +147,374 @@
         <p>I started this because like I always say I'm interested in your opinions and thoughts so through asking I get to know you better too so yeah</p>
     </header>
 
-    
-    
-    <section id="questions" class="questions">
-        <h2>Daily Questions for Shey</h2>
-        <div class="section-content">
-            <ul>
-                <li>(10/29/2024) <strong>What's something you've always wanted to do but haven't yet?</strong>
-                <br>reply:<strong> HAHAHAHHAHAHHAHA 🤐</strong></li>
-                <li>(10/30/2024) <strong>What's your favorite flower?</strong>
-                <br>reply:<strong>i love daisy so much 💗</strong></li>
-                <li>(10/31/2024) <strong>"Saan mo balak pumunta makipagkita ornkung may plans ka na ba?"</strong>
-                <br>reply:<strong>hmm, ion have plans but okay naman me kahit saan!</strong></li>
-                <li>(11/1/2024) <strong>What values are most important to you?</strong>
-                <br>reply:<strong>........</strong></li>
-                <li><strong>What makes you feel appreciated and loved?</strong>  ..</li>
-                <li><strong>What does healty relationship look like to you?</strong>  ..</li>
-                <li><strong>What are some things you can't compromise on in a relationship?</strong>  ..</li>
-                <br>
-                <li><strong>If you are in a bad mood, do you prefer to be alone or be with someone to cheer you up?</strong>  ..</li>
-                <li><strong>Who is one person you tell everything to?</strong>  ..</li>
-                <li><strong>What kind of parent do you think you'd be?</strong>  ..</li>
-                <li><strong>Have you ever lost someone close to you?</strong>  ..</li>
-                <li><strong>How long is the longest feeling you've had feelings for someone?</strong>  ..</li>
-                <br>
-                <li><strong>Is it possible to love someone too much, or is there no such thing?</strong>  ..</li>
-                <li><strong>How do you know when it's time to say ILY?</strong>  ..</li>
-                <li><strong>Is there a difference between being in love and loving someone?</strong>  ..</li>
-                <li><strong>Can you love someone and not like them at the same time?</strong>  ..</li>
-                <li><strong>Is it possible to love someone who doesn't love you back?</strong>  ..</li>
-                <br>
-                <li><strong>Out of everybody you know, Who has your most trust?</strong>  ..</li>
-                <li><strong>What's something you'd love to ecperience for the first time again?</strong>  ..</li>
-                <li><strong>What song breaks your heart everytime you hear it?</strong>  ..</li>
-                <li><strong>If you could say "I love you" to one person who would it be?</strong>  ..</li>
-                <li><strong>Who do you want to watch the stars with at 2 am and talk about life?</strong>  ..</li>
-                <li><strong>Do you believe men and women can be strictly platonic friends?</strong>  ..</li>
-            </ul>
+    <section id="answers-container">
+    <!-- Question 1 -->
+    <div class="question-container">
+        <p class="question"><strong>What's something you've always wanted to do but haven't yet?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">HAHAHAHHAHAHHAHA 🤐</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">I really want to fly a plane but it costs millions to learn how.</p>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question-container">
+        <p class="question"><strong>What's your favorite flower?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">i love daisy so much 💗</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question-container">
+        <p class="question"><strong>"Saan mo balak pumunta makipagkita ornkung may plans ka na ba?"</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">hmm, ion have plans but okay naman me kahit saan!</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question-container">
+        <p class="question"><strong>What values are most important to you?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question-container">
+        <p class="question"><strong>What makes you feel appreciated and loved?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question-container">
+        <p class="question"><strong>What does a healthy relationship look like to you?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question-container">
+        <p class="question"><strong>What are some things you can't compromise on in a relationship?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question-container">
+        <p class="question"><strong>If you are in a bad mood, do you prefer to be alone or be with someone to cheer you up?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question-container">
+        <p class="question"><strong>Who is one person you tell everything to?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question-container">
+        <p class="question"><strong>What kind of parent do you think you'd be?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="question-container">
+        <p class="question"><strong>Have you ever lost someone close to you?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="question-container">
+        <p class="question"><strong>How long is the longest you've had feelings for someone?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 13 -->
+    <div class="question-container">
+        <p class="question"><strong>Is it possible to love someone too much, or is there no such thing?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 14 -->
+    <div class="question-container">
+        <p class="question"><strong>How do you know when it's time to say ILY?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 15 -->
+    <div class="question-container">
+        <p class="question"><strong>Is there a difference between being in love and loving someone?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 16 -->
+    <div class="question-container">
+        <p class="question"><strong>Can you love someone and not like them at the same time?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 17 -->
+    <div class="question-container">
+        <p class="question"><strong>Is it possible to love someone who doesn't love you back?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 18 -->
+    <div class="question-container">
+        <p class="question"><strong>What would make you feel more appreciated?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+    
+     <!-- Question 19 -->
+    <div class="question-container">
+        <p class="question"><strong>Out of everybody you know, who has your most trust?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 20 -->
+    <div class="question-container">
+        <p class="question"><strong>What's something you'd love to experience for the first time again?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 21 -->
+    <div class="question-container">
+        <p class="question"><strong>What song breaks your heart every time you hear it?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 22 -->
+    <div class="question-container">
+        <p class="question"><strong>If you could say "I love you" to one person, who would it be?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 23 -->
+    <div class="question-container">
+        <p class="question"><strong>Who do you want to watch the stars with at 2 am and talk about life?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 24 -->
+    <div class="question-container">
+        <p class="question"><strong>Do you believe men and women can be strictly platonic friends?</strong></p>
+        <div class="answer-container">
+            <div class="answer-section">
+                <h2>Shey</h2>
+                <p class="answer">........</p>
+            </div>
+            <div class="answer-section">
+                <h2>Kobe</h2>
+                <p class="answer">........</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
     <div class="center-btn">
         <a href="index1.html" class="back-btn">Back to Home</a>
     </div>
-    
+
     <footer>
         <p>Made with 💖 by Kobe</p>
     </footer>
